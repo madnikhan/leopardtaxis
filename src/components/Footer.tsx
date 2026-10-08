@@ -16,7 +16,7 @@ import {
 
 export function Footer() {
   return (
-    <footer id="contact" className="footer">
+    <footer className="footer">
       <div className="container footer__contact">
         <div className="footer__item">
           <IconPhone size={24} />

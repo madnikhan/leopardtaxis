@@ -8,15 +8,21 @@ const VEHICLES = [
   { name: '8 Seaters', src: '/images/fleet-8seater.jpg' },
 ]
 
-export function Fleet() {
+type FleetProps = {
+  showHeader?: boolean
+}
+
+export function Fleet({ showHeader = true }: FleetProps) {
   return (
-    <section id="fleet" className="fleet" aria-label="Our fleet">
+    <section className="fleet" aria-label="Our fleet">
       <div className="container">
-        <div className="fleet__header">
-          <IconCrown size={30} />
-          <h2>Our Fleet</h2>
-          <p>A range of vehicles to suit your needs.</p>
-        </div>
+        {showHeader ? (
+          <div className="fleet__header">
+            <IconCrown size={30} />
+            <h2>Our Fleet</h2>
+            <p>A range of vehicles to suit your needs.</p>
+          </div>
+        ) : null}
         <div className="fleet__grid">
           {VEHICLES.map((vehicle) => (
             <article key={vehicle.name} className="fleet-card">

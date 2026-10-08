@@ -1,57 +1,36 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import { NavLink, useLocation } from 'react-router-dom'
 import { Logo } from '../assets/Logo'
 import { VerifiedBadge } from '../assets/Icons'
 
 const LINKS = [
-  { href: '#home', label: 'Home' },
-  { href: '#services', label: 'Our Services' },
-  { href: '#areas', label: 'Areas Covered' },
-  { href: '#fleet', label: 'Fleet' },
-  { href: '#contact', label: 'Contact' },
+  { to: '/', label: 'Home', end: true },
+  { to: '/services', label: 'Our Services' },
+  { to: '/areas', label: 'Areas Covered' },
+  { to: '/fleet', label: 'Fleet' },
+  { to: '/contact', label: 'Contact' },
 ]
 
 export function Header() {
   const [open, setOpen] = useState(false)
-  const [active, setActive] = useState('#home')
-
-  useEffect(() => {
-    const ids = ['home', 'services', 'areas', 'fleet', 'contact']
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
-        if (visible?.target?.id) {
-          setActive(`#${visible.target.id}`)
-        }
-      },
-      { rootMargin: '-35% 0px -50% 0px', threshold: [0.1, 0.35, 0.6] },
-    )
-
-    ids.forEach((id) => {
-      const el = document.getElementById(id)
-      if (el) observer.observe(el)
-    })
-
-    return () => observer.disconnect()
-  }, [])
-
-  const onNavClick = () => setOpen(false)
+  const { pathname } = useLocation()
+  const solid = pathname !== '/'
 
   return (
-    <header className="header">
+    <header className={`header ${solid ? 'header--solid' : ''}`}>
       <div className="container header__inner">
-        <Logo />
+        <Logo onNavigate={() => setOpen(false)} />
         <nav className={`nav ${open ? 'is-open' : ''}`} aria-label="Primary">
           {LINKS.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className={active === link.href ? 'is-active' : undefined}
-              onClick={onNavClick}
+            <NavLink
+              key={link.to}
+              to={link.to}
+              end={link.end}
+              className={({ isActive }) => (isActive ? 'is-active' : undefined)}
+              onClick={() => setOpen(false)}
             >
               {link.label}
-            </a>
+            </NavLink>
           ))}
         </nav>
         <VerifiedBadge className="header__badge" />

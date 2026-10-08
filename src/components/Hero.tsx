@@ -2,14 +2,29 @@ import { WHATSAPP_URL } from '../constants'
 
 export function Hero() {
   return (
-    <section id="home" className="hero" aria-label="Leopard Taxis hero">
+    <section className="hero" aria-label="Leopard Taxis hero">
       <div className="hero__media" aria-hidden="true">
         <img
-          src="/images/hero-airport.jpg"
+          className="hero__sky"
+          src="/images/hero-sky.jpg"
           alt=""
           width={1920}
           height={1080}
           fetchPriority="high"
+        />
+        <img
+          className="hero__plane"
+          src="/images/hero-plane.png"
+          alt=""
+          width={960}
+          height={540}
+        />
+        <img
+          className="hero__car"
+          src="/images/hero-car.png"
+          alt=""
+          width={1280}
+          height={720}
         />
       </div>
       <div className="hero__shade" aria-hidden="true" />

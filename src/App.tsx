@@ -1,23 +1,22 @@
-import { Header } from './components/Header'
-import { Hero } from './components/Hero'
-import { ServicesBar } from './components/ServicesBar'
-import { FaresDestinations } from './components/FaresDestinations'
-import { Fleet } from './components/Fleet'
-import { Footer } from './components/Footer'
-import { WhatsAppButton } from './components/WhatsAppButton'
+import { Navigate, Route, Routes } from 'react-router-dom'
+import { Layout } from './components/Layout'
+import { HomePage } from './pages/HomePage'
+import { ServicesPage } from './pages/ServicesPage'
+import { AreasPage } from './pages/AreasPage'
+import { FleetPage } from './pages/FleetPage'
+import { ContactPage } from './pages/ContactPage'
 
 export default function App() {
   return (
-    <div className="site">
-      <Header />
-      <main>
-        <Hero />
-        <ServicesBar />
-        <FaresDestinations />
-        <Fleet />
-      </main>
-      <Footer />
-      <WhatsAppButton />
-    </div>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route index element={<HomePage />} />
+        <Route path="services" element={<ServicesPage />} />
+        <Route path="areas" element={<AreasPage />} />
+        <Route path="fleet" element={<FleetPage />} />
+        <Route path="contact" element={<ContactPage />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Route>
+    </Routes>
   )
 }

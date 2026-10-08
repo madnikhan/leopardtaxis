@@ -1,6 +1,9 @@
+import { Link } from 'react-router-dom'
+
 type LogoProps = {
   className?: string
   showText?: boolean
+  onNavigate?: () => void
 }
 
 /** Gold leopard head in profile (facing left), matching the brand mock. */
@@ -23,9 +26,14 @@ export function LeopardMark({
   )
 }
 
-export function Logo({ className = '', showText = true }: LogoProps) {
+export function Logo({ className = '', showText = true, onNavigate }: LogoProps) {
   return (
-    <a href="#home" className={`logo ${className}`} aria-label="Leopard Taxis home">
+    <Link
+      to="/"
+      className={`logo ${className}`}
+      aria-label="Leopard Taxis home"
+      onClick={onNavigate}
+    >
       <LeopardMark className="logo__mark" size={52} />
       {showText && (
         <span className="logo__text">
@@ -37,6 +45,6 @@ export function Logo({ className = '', showText = true }: LogoProps) {
           </span>
         </span>
       )}
-    </a>
+    </Link>
   )
 }

@@ -1306,27 +1306,6 @@ button {
     display: none;
   }
 
-  .service-block,
-  .service-block--reverse {
-    grid-template-columns: 1fr;
-  }
-
-  .chauffeur-banner__inner {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .fleet__grid--detailed {
-    grid-template-columns: 1fr;
-  }
-
-  .areas-cards {
-    grid-template-columns: 1fr;
-  }
-
   .dest-card {
     min-height: 0;
     aspect-ratio: 16 / 10;
@@ -1796,7 +1775,8 @@ button {
   line-height: 1.45;
 }
 
-@media (max-width: 1024px) {
+/* Tablet only — do not win over phone single-column rules */
+@media (min-width: 861px) and (max-width: 1024px) {
   .areas-cards {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1821,6 +1801,68 @@ button {
   .hero__plane {
     width: min(48vw, 360px);
     right: -30%;
+  }
+}
+
+/* Final mobile stack — after all base page styles so cascade wins */
+@media (max-width: 860px) {
+  .chauffeur-banner__inner,
+  .service-block,
+  .service-block--reverse,
+  .contact-layout,
+  .areas-cards,
+  .fleet__grid--detailed,
+  .fleet__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-block--reverse .service-block__media,
+  .service-block--reverse .service-block__copy {
+    order: unset;
+  }
+
+  .service-block__media img {
+    min-height: 180px;
+  }
+
+  .chauffeur-banner {
+    padding: 1.75rem 0;
+  }
+
+  .chauffeur-banner__inner {
+    gap: 1.1rem;
+  }
+
+  .chauffeur-banner__copy {
+    text-align: left;
+  }
+
+  .chauffeur-banner__copy p {
+    max-width: none;
+  }
+
+  .service-block__copy {
+    padding: 1.15rem 1.1rem 1.35rem;
+  }
+
+  .contact-page {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-layout {
+    gap: 1.1rem;
+  }
+
+  .areas-cards,
+  .fleet__grid--detailed {
+    gap: 1rem;
+  }
+
+  .area-card,
+  .fleet-card,
+  .service-block,
+  .contact-form {
+    width: 100%;
   }
 }
 

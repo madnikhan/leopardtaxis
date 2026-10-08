@@ -1061,6 +1061,10 @@ button {
     grid-template-columns: 1fr;
   }
 
+  .dest-card {
+    min-height: 0;
+  }
+
   .footer__contact {
     grid-template-columns: 1fr;
   }
@@ -1109,8 +1113,29 @@ button {
     grid-template-columns: 1fr 1fr;
   }
 
+  .panel--destinations {
+    padding: 1.1rem;
+  }
+
   .dest-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .dest-card {
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+  }
+
+  .dest-card img {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .dest-card__label {
+    font-size: 0.72rem;
+    padding: 0.35rem 0.5rem;
+    max-height: 32%;
   }
 }
 

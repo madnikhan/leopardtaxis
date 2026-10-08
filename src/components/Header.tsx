@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import { Logo } from '../assets/Logo'
 
@@ -12,11 +12,31 @@ const LINKS = [
 
 export function Header() {
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const { pathname } = useLocation()
-  const solid = pathname !== '/'
+  const isHome = pathname === '/'
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  useEffect(() => {
+    setOpen(false)
+  }, [pathname])
+
+  const classes = [
+    'header',
+    !isHome || scrolled ? 'header--solid' : 'header--home',
+    scrolled ? 'header--scrolled' : '',
+  ]
+    .filter(Boolean)
+    .join(' ')
 
   return (
-    <header className={`header ${solid ? 'header--solid' : ''}`}>
+    <header className={classes}>
       <div className="container header__inner">
         <Logo showVerified onNavigate={() => setOpen(false)} />
         <nav className={`nav ${open ? 'is-open' : ''}`} aria-label="Primary">

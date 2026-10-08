@@ -29,19 +29,9 @@ export function Hero() {
       </div>
       <div className="hero__shade" aria-hidden="true" />
       <div className="container hero__layout">
-        <div className="hero__content">
+        <div className="hero__intro">
           <p className="hero__eyebrow">Safe · Reliable · Comfortable</p>
           <h1 className="hero__title">Your Journey, Our Priority</h1>
-          <p className="hero__lead">
-            Professional taxi and transfer services across Warwickshire, West
-            Midlands and beyond.
-          </p>
-          <a className="btn-gold" href={WHATSAPP_URL} target="_blank" rel="noreferrer">
-            Get a Quote
-            <span className="btn-gold__arrow" aria-hidden="true">
-              →
-            </span>
-          </a>
         </div>
 
         <aside className="hero__fares" aria-label="Heathrow fare guideline">
@@ -56,6 +46,19 @@ export function Hero() {
             ))}
           </ul>
         </aside>
+
+        <div className="hero__actions">
+          <p className="hero__lead">
+            Professional taxi and transfer services across Warwickshire, West
+            Midlands and beyond.
+          </p>
+          <a className="btn-gold" href={WHATSAPP_URL} target="_blank" rel="noreferrer">
+            Get a Quote
+            <span className="btn-gold__arrow" aria-hidden="true">
+              →
+            </span>
+          </a>
+        </div>
       </div>
     </section>
   )

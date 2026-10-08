@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import { Logo } from '../assets/Logo'
-import { VerifiedBadge } from '../assets/Icons'
 
 const LINKS = [
   { to: '/', label: 'Home', end: true },
@@ -19,7 +18,7 @@ export function Header() {
   return (
     <header className={`header ${solid ? 'header--solid' : ''}`}>
       <div className="container header__inner">
-        <Logo onNavigate={() => setOpen(false)} />
+        <Logo showVerified onNavigate={() => setOpen(false)} />
         <nav className={`nav ${open ? 'is-open' : ''}`} aria-label="Primary">
           {LINKS.map((link) => (
             <NavLink
@@ -33,7 +32,6 @@ export function Header() {
             </NavLink>
           ))}
         </nav>
-        <VerifiedBadge className="header__badge" />
         <button
           type="button"
           className={`header__toggle ${open ? 'is-open' : ''}`}

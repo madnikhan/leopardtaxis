@@ -1,4 +1,4 @@
-import { WHATSAPP_URL } from '../constants'
+import { HEATHROW_FARES, WHATSAPP_URL } from '../constants'
 
 export function Hero() {
   return (
@@ -28,7 +28,7 @@ export function Hero() {
         />
       </div>
       <div className="hero__shade" aria-hidden="true" />
-      <div className="container">
+      <div className="container hero__layout">
         <div className="hero__content">
           <p className="hero__eyebrow">Safe · Reliable · Comfortable</p>
           <h1 className="hero__title">Your Journey, Our Priority</h1>
@@ -37,12 +37,25 @@ export function Hero() {
             Midlands and beyond.
           </p>
           <a className="btn-gold" href={WHATSAPP_URL} target="_blank" rel="noreferrer">
-            Book Your Ride
+            Get a Quote
             <span className="btn-gold__arrow" aria-hidden="true">
               →
             </span>
           </a>
         </div>
+
+        <aside className="hero__fares" aria-label="Heathrow fare guideline">
+          <p className="hero__fares-eyebrow">Heathrow London</p>
+          <h2 className="hero__fares-title">Fare Guideline to Heathrow</h2>
+          <ul className="hero__fares-list">
+            {HEATHROW_FARES.map((fare) => (
+              <li key={fare.route}>
+                <span>{fare.route}</span>
+                <strong>{fare.price}</strong>
+              </li>
+            ))}
+          </ul>
+        </aside>
       </div>
     </section>
   )

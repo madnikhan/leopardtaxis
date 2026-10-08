@@ -1,15 +1,16 @@
 import { Link } from 'react-router-dom'
+import { VerifiedBadge } from './Icons'
 
 type LogoProps = {
   className?: string
   showText?: boolean
+  showVerified?: boolean
   onNavigate?: () => void
 }
 
-/** Gold leopard head in profile (facing left), matching the brand mock. */
 export function LeopardMark({
   className = '',
-  size = 48,
+  size = 56,
 }: {
   className?: string
   size?: number
@@ -17,7 +18,7 @@ export function LeopardMark({
   return (
     <img
       className={className}
-      src="/images/logo-leopard.png"
+      src="/images/logo-leopard-round.png"
       alt=""
       width={size}
       height={size}
@@ -26,7 +27,12 @@ export function LeopardMark({
   )
 }
 
-export function Logo({ className = '', showText = true, onNavigate }: LogoProps) {
+export function Logo({
+  className = '',
+  showText = true,
+  showVerified = false,
+  onNavigate,
+}: LogoProps) {
   return (
     <Link
       to="/"
@@ -34,7 +40,7 @@ export function Logo({ className = '', showText = true, onNavigate }: LogoProps)
       aria-label="Leopard Taxis home"
       onClick={onNavigate}
     >
-      <LeopardMark className="logo__mark" size={52} />
+      <LeopardMark className="logo__mark" size={56} />
       {showText && (
         <span className="logo__text">
           <span className="logo__name">LEOPARD</span>
@@ -45,6 +51,7 @@ export function Logo({ className = '', showText = true, onNavigate }: LogoProps)
           </span>
         </span>
       )}
+      {showVerified && <VerifiedBadge className="logo__verified" />}
     </Link>
   )
 }

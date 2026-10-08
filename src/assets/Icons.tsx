@@ -104,7 +104,7 @@ export function VerifiedBadge({ className }: { className?: string }) {
         />
       </svg>
       <div className="verified-badge__copy">
-        <strong>Business Verified</strong>
+        <strong>Meta Verified</strong>
         <span>Authentic business · Trusted by customers</span>
       </div>
     </div>

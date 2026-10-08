@@ -1,11 +1,34 @@
-import { IconCrown } from '../assets/Icons'
-
 const VEHICLES = [
-  { name: 'Saloon', src: '/images/fleet-saloon.jpg' },
-  { name: 'Estate', src: '/images/fleet-estate.jpg' },
-  { name: 'Executive', src: '/images/fleet-executive.jpg' },
-  { name: '6 Seaters', src: '/images/fleet-6seater.jpg' },
-  { name: '8 Seaters', src: '/images/fleet-8seater.jpg' },
+  {
+    name: 'Saloon',
+    src: '/images/fleet-saloon.jpg',
+    detail:
+      'Comfortable 3–4 passenger saloon for airport runs, business travel and everyday hire. Ideal when you need a smart, efficient ride with standard luggage space.',
+  },
+  {
+    name: 'Estate',
+    src: '/images/fleet-estate.jpg',
+    detail:
+      'Extra boot space for suitcases, golf bags or shopping. Perfect for families and travellers with more luggage without moving up to an MPV.',
+  },
+  {
+    name: 'Executive',
+    src: '/images/fleet-executive.jpg',
+    detail:
+      'Premium black executive car for VIP transfers, corporate travel and special occasions. Refined cabin comfort with a professional chauffeur presentation.',
+  },
+  {
+    name: '6 Seaters',
+    src: '/images/fleet-6seater.jpg',
+    detail:
+      'Spacious MPV-style people carrier (Estima / Galaxy class) for up to 6 passengers. Great for families, small groups and airport transfers with multiple bags.',
+  },
+  {
+    name: '8 Seaters',
+    src: '/images/fleet-8seater.jpg',
+    detail:
+      'Larger Volkswagen-style people carrier for up to 8 passengers. Ideal for group days out, sports teams, weddings and multi-family airport trips.',
+  },
 ]
 
 type FleetProps = {
@@ -18,14 +41,13 @@ export function Fleet({ showHeader = true }: FleetProps) {
       <div className="container">
         {showHeader ? (
           <div className="fleet__header">
-            <IconCrown size={30} />
             <h2>Our Fleet</h2>
             <p>A range of vehicles to suit your needs.</p>
           </div>
         ) : null}
-        <div className="fleet__grid">
+        <div className="fleet__grid fleet__grid--detailed">
           {VEHICLES.map((vehicle) => (
-            <article key={vehicle.name} className="fleet-card">
+            <article key={vehicle.name} className="fleet-card fleet-card--detailed">
               <div className="fleet-card__media">
                 <img
                   src={vehicle.src}
@@ -35,7 +57,10 @@ export function Fleet({ showHeader = true }: FleetProps) {
                   loading="lazy"
                 />
               </div>
-              <h3 className="fleet-card__label">{vehicle.name}</h3>
+              <div className="fleet-card__body">
+                <h3 className="fleet-card__label">{vehicle.name}</h3>
+                <p>{vehicle.detail}</p>
+              </div>
             </article>
           ))}
         </div>

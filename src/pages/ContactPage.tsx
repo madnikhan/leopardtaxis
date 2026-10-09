@@ -6,7 +6,6 @@ import {
   IconPhone,
   IconWhatsApp,
 } from '../assets/Icons'
-import { PageBanner } from '../components/PageBanner'
 import {
   EMAIL,
   EMAIL_HREF,
@@ -53,12 +52,73 @@ export function ContactPage() {
 
   return (
     <>
-      <PageBanner
-        title="Contact"
-        subtitle="Call, WhatsApp, email or send a message — we will get back to you promptly."
-      />
-      <section className="page-section">
-        <div className="container contact-layout">
+      <section className="page-banner page-banner--compact" aria-label="Contact">
+        <div className="container page-banner__inner">
+          <h1 className="page-banner__title">Contact</h1>
+          <p className="page-banner__subtitle">Send a message — we will get back to you promptly.</p>
+        </div>
+      </section>
+
+      <section className="page-section page-section--contact">
+        <div className="container contact-layout contact-layout--form-first">
+          <form className="contact-form" onSubmit={onSubmit} noValidate>
+            <h2>Send a message</h2>
+            <p className="contact-form__lead">Enquiries go to {EMAIL}.</p>
+
+            <div className="contact-form__row">
+              <label>
+                Name
+                <input name="name" type="text" required autoComplete="name" />
+              </label>
+              <label>
+                Phone
+                <input name="phone" type="tel" required autoComplete="tel" />
+              </label>
+            </div>
+            <label>
+              Email
+              <input name="email" type="email" required autoComplete="email" />
+            </label>
+            <div className="contact-form__row">
+              <label>
+                Pickup (optional)
+                <input name="pickup" type="text" autoComplete="street-address" />
+              </label>
+              <label>
+                Destination (optional)
+                <input name="destination" type="text" />
+              </label>
+            </div>
+            <label>
+              Message
+              <textarea name="message" rows={3} required />
+            </label>
+
+            <input
+              type="text"
+              name="_gotcha"
+              tabIndex={-1}
+              autoComplete="off"
+              className="contact-form__honeypot"
+              aria-hidden="true"
+            />
+
+            <button className="btn-gold" type="submit" disabled={status === 'sending'}>
+              {status === 'sending' ? 'Sending…' : 'Send message'}
+            </button>
+
+            {status === 'success' && (
+              <p className="contact-form__status contact-form__status--ok" role="status">
+                Thank you — your message has been sent. We will reply soon.
+              </p>
+            )}
+            {status === 'error' && (
+              <p className="contact-form__status contact-form__status--err" role="alert">
+                Something went wrong. Please email us at {EMAIL} or try WhatsApp.
+              </p>
+            )}
+          </form>
+
           <div className="contact-page">
             <a className="contact-page__card" href={PHONE_TEL}>
               <IconPhone size={28} />
@@ -99,62 +159,6 @@ export function ContactPage() {
               </div>
             </a>
           </div>
-
-          <form className="contact-form" onSubmit={onSubmit} noValidate>
-            <h2>Send a message</h2>
-            <p className="contact-form__lead">
-              Enquiries are delivered to {EMAIL}.
-            </p>
-
-            <label>
-              Name
-              <input name="name" type="text" required autoComplete="name" />
-            </label>
-            <label>
-              Phone
-              <input name="phone" type="tel" required autoComplete="tel" />
-            </label>
-            <label>
-              Email
-              <input name="email" type="email" required autoComplete="email" />
-            </label>
-            <label>
-              Pickup (optional)
-              <input name="pickup" type="text" autoComplete="street-address" />
-            </label>
-            <label>
-              Destination (optional)
-              <input name="destination" type="text" />
-            </label>
-            <label>
-              Message
-              <textarea name="message" rows={5} required />
-            </label>
-
-            <input
-              type="text"
-              name="_gotcha"
-              tabIndex={-1}
-              autoComplete="off"
-              className="contact-form__honeypot"
-              aria-hidden="true"
-            />
-
-            <button className="btn-gold" type="submit" disabled={status === 'sending'}>
-              {status === 'sending' ? 'Sending…' : 'Send message'}
-            </button>
-
-            {status === 'success' && (
-              <p className="contact-form__status contact-form__status--ok" role="status">
-                Thank you — your message has been sent. We will reply soon.
-              </p>
-            )}
-            {status === 'error' && (
-              <p className="contact-form__status contact-form__status--err" role="alert">
-                Something went wrong. Please email us directly at {EMAIL} or try WhatsApp.
-              </p>
-            )}
-          </form>
         </div>
       </section>
     </>

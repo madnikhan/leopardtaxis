@@ -7,7 +7,7 @@ const SERVICES = [
     image: '/images/services/service-airport.jpg',
     body: [
       'Stress-free travel to and from all major UK airports including Heathrow, Birmingham, Gatwick, Stansted, Luton and Manchester.',
-      'We offer meet & greet, flight tracking for delays, help with luggage, and fixed-price transfers so you know the fare before you travel.',
+      'Flight tracking for delays, help with luggage, and clear fixed-price transfers so you know the fare before you travel — with professional, pleasant drivers and clean, comfortable cars.',
     ],
   },
   {
@@ -23,7 +23,7 @@ const SERVICES = [
     image: '/images/services/service-intercity.jpg',
     body: [
       'Longer journeys with the same high standards — business trips, family visits, university runs and nationwide private hire.',
-      'Door-to-door service in a clean, comfortable vehicle, with professional chauffeurs who know the UK road network.',
+      'Door-to-door service in a clean, comfortable vehicle with professional drivers who know the UK road network.',
     ],
   },
   {
@@ -43,30 +43,6 @@ export function ServicesPage() {
         title="Our Services"
         subtitle="Airport transfers, day outs, intercity travel and everyday taxi needs — covered with care."
       />
-
-      <section className="chauffeur-banner" aria-label="Professional chauffeur welcome">
-        <div className="container chauffeur-banner__inner">
-          <div className="chauffeur-banner__media">
-            <img
-              className="chauffeur-banner__img"
-              src="/images/services/service-chauffeur.jpg"
-              alt="Uniformed Leopard Taxis chauffeur welcoming a guest"
-              width={800}
-              height={600}
-            />
-          </div>
-          <div className="chauffeur-banner__copy">
-            <p className="chauffeur-banner__eyebrow">Meet your chauffeur</p>
-            <h2>Welcomed with professionalism</h2>
-            <p>
-              Our uniformed drivers greet you with courtesy — whether it is an
-              airport arrivals hall, hotel forecourt or your front door. Smart
-              presentation, punctual pickups and a calm, comfortable ride are
-              standard with every booking.
-            </p>
-          </div>
-        </div>
-      </section>
 
       <section className="page-section">
         <div className="container service-blocks">

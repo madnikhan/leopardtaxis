@@ -436,8 +436,9 @@ button {
     'intro fares'
     'actions fares';
   gap: 1rem 1.5rem;
-  align-items: end;
+  align-items: center;
   padding: 1.5rem 0 3.5rem;
+  min-height: calc(100vh - var(--header-h));
 }
 
 .hero__intro {
@@ -456,31 +457,68 @@ button {
   grid-area: fares;
   justify-self: end;
   align-self: center;
-  width: min(100%, 380px);
-  padding: 1.15rem 1.2rem 1.25rem;
+  width: min(100%, 420px);
+  padding: 1.25rem 1.3rem 1.35rem;
   border-radius: 14px;
   border: 1px solid rgba(212, 175, 55, 0.45);
-  background: rgba(8, 35, 26, 0.78);
+  background: rgba(8, 35, 26, 0.82);
   backdrop-filter: blur(12px);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
   animation: heroRise 1s 0.12s ease both;
 }
 
+.hero__fares-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
 .hero__fares-eyebrow {
   margin: 0 0 0.25rem;
   color: var(--gold);
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
 .hero__fares-title {
-  margin: 0 0 0.9rem;
+  margin: 0;
   font-family: var(--font-display);
-  font-size: 1.45rem;
+  font-size: 1.65rem;
   font-weight: 600;
   color: var(--cream);
+  line-height: 1.15;
+}
+
+.fare-discount {
+  flex-shrink: 0;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.1rem;
+  padding: 0.45rem 0.55rem;
+  border-radius: 6px;
+  background: linear-gradient(180deg, #ff3b3b, #c62828);
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(198, 40, 40, 0.45);
+  transform: rotate(-6deg);
+}
+
+.fare-discount small {
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  opacity: 0.95;
 }
 
 .hero__fares-list {
@@ -488,7 +526,7 @@ button {
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 0.5rem;
+  gap: 0.55rem;
 }
 
 .hero__fares-list li {
@@ -496,16 +534,16 @@ button {
   justify-content: space-between;
   gap: 0.75rem;
   align-items: center;
-  padding: 0.55rem 0.7rem;
+  padding: 0.7rem 0.85rem;
   border-radius: 8px;
   background: linear-gradient(90deg, rgba(11, 61, 46, 0.95), rgba(20, 92, 69, 0.9));
   color: var(--gold);
-  font-size: 0.82rem;
+  font-size: 0.95rem;
 }
 
 .hero__fares-list strong {
   font-family: var(--font-display);
-  font-size: 1rem;
+  font-size: 1.2rem;
   white-space: nowrap;
 }
 
@@ -730,6 +768,7 @@ button {
 
 .dest-grid--wide {
   grid-template-columns: repeat(3, 1fr);
+  gap: 0.65rem;
 }
 
 .panel {
@@ -839,10 +878,135 @@ button {
   position: relative;
   border-radius: 10px;
   overflow: hidden;
-  aspect-ratio: 3 / 2;
-  min-height: 140px;
+  aspect-ratio: 16 / 10;
+  max-height: 140px;
+  min-height: 0;
   isolation: isolate;
   transition: transform 0.25s ease;
+}
+
+/* —— Home areas name strip —— */
+.areas-strip {
+  background: linear-gradient(180deg, var(--green-deep), var(--green-mid));
+  border-block: 1px solid rgba(212, 175, 55, 0.3);
+  padding: 1.4rem 0;
+  color: var(--cream);
+}
+
+.areas-strip__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  text-align: center;
+}
+
+.areas-strip__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.areas-strip__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.45rem 0.35rem;
+}
+
+.areas-strip__list li {
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  color: var(--gold);
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.areas-strip__list li:not(:last-child)::after {
+  content: none;
+}
+
+.areas-strip__link {
+  color: var(--cream);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.areas-strip__link:hover {
+  color: var(--gold);
+}
+
+.meta-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--cream);
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.meta-inline svg {
+  flex-shrink: 0;
+}
+
+.area-fares {
+  list-style: none;
+  margin: 0.65rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.area-fares li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.45rem 0.55rem;
+  border-radius: 8px;
+  background: linear-gradient(90deg, var(--green-deep), var(--green-rich));
+  color: var(--gold);
+  font-size: 0.82rem;
+}
+
+.area-fares strong {
+  white-space: nowrap;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+}
+
+.page-banner--compact {
+  padding: 1.1rem 0 1rem;
+}
+
+.page-banner--compact .page-banner__title {
+  font-size: clamp(1.7rem, 3vw, 2.2rem);
+}
+
+.page-banner--compact .page-banner__subtitle {
+  margin-top: 0.35rem;
+  font-size: 0.92rem;
+}
+
+.page-section--contact {
+  padding: 1.25rem 0 2.5rem;
+}
+
+.contact-layout--form-first {
+  grid-template-columns: 1.1fr 0.9fr;
+}
+
+.contact-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
 }
 
 .dest-card:hover {
@@ -1082,12 +1246,9 @@ button {
 
 /* —— Responsive —— */
 @media (max-width: 1200px) {
-  .dest-grid {
+  .dest-grid,
+  .dest-grid--wide {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .dest-card {
-    min-height: 150px;
   }
 }
 
@@ -1107,10 +1268,6 @@ button {
 
   .fleet__grid {
     grid-template-columns: repeat(3, 1fr);
-  }
-
-  .dest-card {
-    min-height: 160px;
   }
 }
 
@@ -1218,8 +1375,36 @@ button {
   }
 
   .hero__layout {
-    padding: 0.75rem 0 1.25rem;
+    padding: 0.5rem 0 1.1rem;
     gap: 0.7rem;
+    min-height: 0;
+    align-content: center;
+  }
+
+  .hero__fares-title {
+    font-size: 1.35rem;
+  }
+
+  .hero__fares-list li {
+    font-size: 0.86rem;
+    padding: 0.55rem 0.65rem;
+  }
+
+  .hero__fares-list strong {
+    font-size: 1.05rem;
+  }
+
+  .fare-discount {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.45rem;
+  }
+
+  .contact-form__row {
+    grid-template-columns: 1fr;
+  }
+
+  .dest-card {
+    max-height: 110px;
   }
 
   .hero__title {
@@ -1810,6 +1995,7 @@ button {
   .service-block,
   .service-block--reverse,
   .contact-layout,
+  .contact-layout--form-first,
   .areas-cards,
   .fleet__grid--detailed,
   .fleet__grid {

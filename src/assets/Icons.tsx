@@ -93,18 +93,30 @@ export function IconWhatsApp({ className, size = 28 }: IconProps) {
   )
 }
 
+export function MetaTick({ className, size = 18 }: { className?: string; size?: number }) {
+  return (
+    <svg
+      className={className}
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <circle cx="12" cy="12" r="11" fill="#1877F2" />
+      <path
+        fill="#fff"
+        d="M10.2 15.8 6.7 12.3l1.4-1.4 2.1 2.1 5.1-5.1 1.4 1.4-6.5 6.5z"
+      />
+    </svg>
+  )
+}
+
 export function VerifiedBadge({ className }: { className?: string }) {
   return (
     <div className={`verified-badge ${className ?? ''}`}>
-      <svg className="verified-badge__check" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
-        <circle cx="12" cy="12" r="11" fill="#1877F2" />
-        <path
-          fill="#fff"
-          d="M10.2 15.8 6.7 12.3l1.4-1.4 2.1 2.1 5.1-5.1 1.4 1.4-6.5 6.5z"
-        />
-      </svg>
+      <MetaTick className="verified-badge__check" size={28} />
       <div className="verified-badge__copy">
-        <strong>Meta Verified</strong>
+        <strong>Meta Verified Business</strong>
         <span>Authentic business · Trusted by customers</span>
       </div>
     </div>

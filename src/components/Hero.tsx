@@ -35,8 +35,16 @@ export function Hero() {
         </div>
 
         <aside className="hero__fares" aria-label="Heathrow fare guideline">
-          <p className="hero__fares-eyebrow">Heathrow London</p>
-          <h2 className="hero__fares-title">Fare Guideline to Heathrow</h2>
+          <div className="hero__fares-top">
+            <div>
+              <p className="hero__fares-eyebrow">Heathrow London</p>
+              <h2 className="hero__fares-title">Fare Guideline to Heathrow</h2>
+            </div>
+            <span className="fare-discount" title="5% discount on return journeys">
+              5% OFF
+              <small>return journeys</small>
+            </span>
+          </div>
           <ul className="hero__fares-list">
             {HEATHROW_FARES.map((fare) => (
               <li key={fare.route}>

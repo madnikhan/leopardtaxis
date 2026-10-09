@@ -4,6 +4,7 @@ import {
   IconMail,
   IconPhone,
   IconWhatsApp,
+  MetaTick,
 } from '../assets/Icons'
 import {
   EMAIL,
@@ -27,6 +28,10 @@ export function Footer() {
               <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" aria-label="WhatsApp">
                 <IconWhatsApp size={18} />
               </a>
+              <span className="meta-inline" title="Meta Verified Business">
+                <MetaTick size={16} />
+                <span>Meta Verified Business</span>
+              </span>
             </div>
           </div>
         </div>

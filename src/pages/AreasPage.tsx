@@ -1,69 +1,59 @@
 import { PageBanner } from '../components/PageBanner'
 import { WHATSAPP_URL } from '../constants'
 
-const AREAS = [
+const AIRPORT_LABELS = [
+  'Birmingham Airport',
+  'Heathrow',
+  'Gatwick & Stansted',
+  'Luton Airport',
+] as const
+
+type AreaFares = {
+  name: string
+  image: string
+  fares: [string, string, string, string]
+}
+
+const AREAS: AreaFares[] = [
   {
-    name: 'Warwick',
-    landmark: 'Warwick Castle',
+    name: 'Warwick & Leamington Spa',
     image: '/images/areas/area-warwick.jpg',
-    blurb:
-      'Home to Warwick Castle and a historic county town centre. We cover local pickups, castle visits and transfers across Warwickshire.',
-  },
-  {
-    name: 'Leamington Spa',
-    landmark: 'Royal Pump Rooms',
-    image: '/images/areas/area-leamington.jpg',
-    blurb:
-      'Elegant spa-town streets, the Parade and Royal Pump Rooms. Ideal for town centre runs, station transfers and airport journeys.',
+    fares: ['from £40', 'from £130', 'from £170', 'from £100'],
   },
   {
     name: 'Stratford upon Avon',
-    landmark: "Shakespeare's Birthplace",
     image: '/images/areas/area-stratford.jpg',
-    blurb:
-      "Shakespeare's town — theatres, riverside walks and visitor attractions. Perfect for theatre nights and tourist day trips.",
+    fares: ['from £50', 'from £145', 'from £185', 'from £115'],
   },
   {
     name: 'Kenilworth',
-    landmark: 'Kenilworth Castle',
     image: '/images/areas/area-kenilworth.jpg',
-    blurb:
-      'Famous for Kenilworth Castle ruins and a welcoming high street. Reliable local taxis and onward travel to Coventry or airports.',
+    fares: ['from £35', 'from £145', 'from £185', 'from £115'],
   },
   {
     name: 'Coventry',
-    landmark: 'Coventry Cathedral',
     image: '/images/areas/area-coventry.jpg',
-    blurb:
-      'Cathedral city with universities, stations and arenas. We handle student moves, events and airport connections with ease.',
+    fares: ['from £40', 'from £150', 'from £180', 'from £100'],
   },
   {
     name: 'Solihull',
-    landmark: 'Touchwood & town centre',
     image: '/images/areas/area-solihull.jpg',
-    blurb:
-      'Shopping, business parks and residential areas. Smooth links to Birmingham Airport and the wider West Midlands.',
+    fares: ['from £30', 'from £150', 'from £190', 'from £120'],
   },
   {
     name: 'Rugby',
-    landmark: 'Rugby School heritage',
     image: '/images/areas/area-rugby.jpg',
-    blurb:
-      'Historic rugby town with strong rail links. Local hire, school runs and long-distance transfers available.',
+    fares: ['from £65', 'from £150', 'from £190', 'from £100'],
   },
   {
     name: 'Nuneaton',
-    landmark: 'Town centre & rail links',
     image: '/images/areas/area-nuneaton.jpg',
-    blurb:
-      'Convenient for Midlands travel and mainline rail. Book us for appointments, nights out and airport runs.',
+    fares: ['from £45', 'from £190', 'from £240', 'from £120'],
   },
   {
     name: 'Birmingham',
-    landmark: 'Bullring & city skyline',
     image: '/images/areas/area-birmingham.jpg',
-    blurb:
-      'The UK’s second city — shopping, nightlife, NEC and airport. Executive and group vehicles for city and beyond.',
+    fares: ['from £30', 'from £175', 'from £220', 'from £120'],
   },
 ]
 
@@ -72,7 +62,7 @@ export function AreasPage() {
     <>
       <PageBanner
         title="Areas Covered"
-        subtitle="Landmark towns across Warwickshire and the West Midlands — and journeys nationwide."
+        subtitle="Airport transfer fare guidelines from towns we cover across Warwickshire and the West Midlands."
       />
       <section className="page-section">
         <div className="container areas-cards">
@@ -81,7 +71,7 @@ export function AreasPage() {
               <div className="area-card__media">
                 <img
                   src={area.image}
-                  alt={`${area.name} — ${area.landmark}`}
+                  alt={area.name}
                   width={640}
                   height={480}
                   loading="lazy"
@@ -89,8 +79,14 @@ export function AreasPage() {
               </div>
               <div className="area-card__body">
                 <h2>{area.name}</h2>
-                <p className="area-card__landmark">{area.landmark}</p>
-                <p>{area.blurb}</p>
+                <ul className="area-fares">
+                  {AIRPORT_LABELS.map((label, i) => (
+                    <li key={label}>
+                      <span>{label}</span>
+                      <strong>{area.fares[i]}</strong>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </article>
           ))}

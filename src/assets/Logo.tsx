@@ -40,7 +40,7 @@ export function Logo({
       aria-label="Leopard Taxis home"
       onClick={onNavigate}
     >
-      <LeopardMark className="logo__mark" size={56} />
+      <LeopardMark className="logo__mark" size={64} />
       {showText && (
         <span className="logo__text">
           <span className="logo__name">LEOPARD</span>

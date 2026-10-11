@@ -30,15 +30,15 @@ export function Hero() {
       <div className="hero__shade" aria-hidden="true" />
       <div className="container hero__layout">
         <div className="hero__intro">
+          <p className="hero__promo">Best airport rates in Warwickshire</p>
           <p className="hero__eyebrow">Safe · Reliable · Comfortable</p>
-          <h1 className="hero__title">Your Journey, Our Priority</h1>
         </div>
 
         <aside className="hero__fares" aria-label="Heathrow fare guideline">
           <div className="hero__fares-top">
             <div>
               <p className="hero__fares-eyebrow">Heathrow London</p>
-              <h2 className="hero__fares-title">Fare Guideline to Heathrow</h2>
+              <h1 className="hero__fares-title">Fare Guideline to Heathrow</h1>
             </div>
             <span className="fare-discount" title="5% discount on return journeys">
               5% OFF
@@ -56,12 +56,13 @@ export function Hero() {
         </aside>
 
         <div className="hero__actions">
-          <p className="hero__lead">
-            Professional taxi and transfer services across Warwickshire, West
-            Midlands and beyond.
-          </p>
-          <a className="btn-gold" href={WHATSAPP_URL} target="_blank" rel="noreferrer">
-            Get a Quote
+          <a
+            className="btn-gold btn-gold--sm"
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Ask a question
             <span className="btn-gold__arrow" aria-hidden="true">
               →
             </span>

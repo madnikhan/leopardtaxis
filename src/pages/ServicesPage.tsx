@@ -70,8 +70,13 @@ export function ServicesPage() {
           ))}
         </div>
         <div className="container page-section__cta">
-          <a className="btn-gold" href={WHATSAPP_URL} target="_blank" rel="noreferrer">
-            Get a Quote
+          <a
+            className="btn-gold btn-gold--sm"
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Ask a question
             <span className="btn-gold__arrow" aria-hidden="true">
               →
             </span>

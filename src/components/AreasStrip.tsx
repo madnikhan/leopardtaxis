@@ -24,7 +24,7 @@ export function AreasStrip() {
             ))}
           </ul>
           <Link className="areas-strip__link" to="/areas">
-            View airport fares by area →
+            Our fares to other UK airports from above towns and cities →
           </Link>
         </div>
       </div>

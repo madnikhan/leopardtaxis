@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
+import { IconWhatsApp, MetaTick } from '../assets/Icons'
 import { Logo } from '../assets/Logo'
+import { PHONE_TEL, WHATSAPP_DISPLAY, WHATSAPP_URL } from '../constants'
 
 const LINKS = [
   { to: '/', label: 'Home', end: true },
@@ -9,6 +11,28 @@ const LINKS = [
   { to: '/fleet', label: 'Fleet' },
   { to: '/contact', label: 'Contact' },
 ]
+
+function HeaderContact({ className = '' }: { className?: string }) {
+  return (
+    <div className={`header__contact ${className}`.trim()}>
+      <a className="header__phone" href={PHONE_TEL}>
+        {WHATSAPP_DISPLAY}
+      </a>
+      <a
+        className="header__wa"
+        href={WHATSAPP_URL}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="WhatsApp — Meta Verified Business"
+      >
+        <IconWhatsApp size={18} />
+        <span>WhatsApp</span>
+        <MetaTick size={16} />
+        <span className="header__meta-label">Meta Verified Business</span>
+      </a>
+    </div>
+  )
+}
 
 export function Header() {
   const [open, setOpen] = useState(false)
@@ -51,7 +75,9 @@ export function Header() {
               {link.label}
             </NavLink>
           ))}
+          <HeaderContact className="header__contact--mobile" />
         </nav>
+        <HeaderContact className="header__contact--desktop" />
         <button
           type="button"
           className={`header__toggle ${open ? 'is-open' : ''}`}

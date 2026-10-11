@@ -91,7 +91,7 @@ export function ContactPage() {
       const message = error instanceof Error ? error.message : ''
       setErrorMessage(
         message && /activat/i.test(message)
-          ? message
+          ? `This form needs a one-time activation. Open the inbox for ${EMAIL} (check Spam/Junk), click the “Activate Form” link from FormSubmit, then try sending again.`
           : `Something went wrong. Please email us at ${EMAIL} or try WhatsApp.`,
       )
     }

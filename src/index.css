@@ -2150,6 +2150,7 @@ button {
 .area-card {
   display: grid;
   grid-template-columns: 1fr 2fr;
+  align-items: stretch;
   background: #fff;
   border-radius: var(--radius);
   overflow: hidden;
@@ -2160,16 +2161,20 @@ button {
 }
 
 .area-card__media {
-  min-height: 0;
-  max-height: 220px;
-  aspect-ratio: 4 / 5;
+  min-height: 100%;
+  height: 100%;
+  max-height: none;
+  aspect-ratio: auto;
   overflow: hidden;
+  align-self: stretch;
 }
 
 .area-card__media img {
   width: 100%;
   height: 100%;
+  min-height: 100%;
   object-fit: cover;
+  object-position: center;
   transition: transform 0.35s ease;
 }
 

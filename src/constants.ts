@@ -6,7 +6,8 @@ export const EMAIL = 'info@leopardtaxis.co.uk'
 export const EMAIL_HREF = `mailto:${EMAIL}`
 export const GOOGLE_REVIEW_URL =
   'https://www.google.com/search?q=Leopard+Taxis+Warwickshire+reviews'
-export const FORMSUBMIT_ENDPOINT = 'https://formsubmit.co/ajax/info@leopardtaxis.co.uk'
+/** IONOS PHP mail endpoint (copied from public/ into dist/) */
+export const CONTACT_ENDPOINT = '/contact.php'
 
 export const HEATHROW_FARES = [
   { route: 'Leamington / Warwick', price: 'from £130' },

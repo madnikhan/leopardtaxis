@@ -7,9 +7,9 @@ import {
   IconWhatsApp,
 } from '../assets/Icons'
 import {
+  CONTACT_ENDPOINT,
   EMAIL,
   EMAIL_HREF,
-  FORMSUBMIT_ENDPOINT,
   GOOGLE_REVIEW_URL,
   PHONE_TEL,
   WHATSAPP_DISPLAY,
@@ -18,7 +18,7 @@ import {
 
 type Status = 'idle' | 'sending' | 'error'
 
-function isFormSubmitSuccess(payload: unknown): boolean {
+function isContactSuccess(payload: unknown): boolean {
   if (!payload || typeof payload !== 'object') return false
   const success = (payload as { success?: unknown }).success
   return success === true || success === 'true'
@@ -52,14 +52,8 @@ export function ContactPage() {
     setStatus('sending')
     setErrorMessage('')
 
-    const replyTo = String(data.get('email') || '').trim()
-    data.append('_subject', 'New enquiry from Leopard Taxis website')
-    data.append('_template', 'table')
-    data.append('_captcha', 'false')
-    if (replyTo) data.append('_replyto', replyTo)
-
     try {
-      const response = await fetch(FORMSUBMIT_ENDPOINT, {
+      const response = await fetch(CONTACT_ENDPOINT, {
         method: 'POST',
         body: data,
         headers: { Accept: 'application/json' },
@@ -72,7 +66,7 @@ export function ContactPage() {
         payload = null
       }
 
-      if (!response.ok || !isFormSubmitSuccess(payload)) {
+      if (!response.ok || !isContactSuccess(payload)) {
         const message =
           payload &&
           typeof payload === 'object' &&
@@ -90,9 +84,7 @@ export function ContactPage() {
       setStatus('error')
       const message = error instanceof Error ? error.message : ''
       setErrorMessage(
-        message && /activat/i.test(message)
-          ? `This form needs a one-time activation. Open the inbox for ${EMAIL} (check Spam/Junk), click the “Activate Form” link from FormSubmit, then try sending again.`
-          : `Something went wrong. Please email us at ${EMAIL} or try WhatsApp.`,
+        message || `Something went wrong. Please email us at ${EMAIL} or try WhatsApp.`,
       )
     }
   }

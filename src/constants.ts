@@ -4,8 +4,8 @@ export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURICo
 export const PHONE_TEL = 'tel:+447947745958'
 export const EMAIL = 'info@leopardtaxis.co.uk'
 export const EMAIL_HREF = `mailto:${EMAIL}`
-export const GOOGLE_REVIEW_URL =
-  'https://www.google.com/search?q=Leopard+Taxis+Warwickshire+reviews'
+export const GOOGLE_REVIEW_URL = 'https://g.page/r/CX_xvXJIL8xxEBM/review'
+export const GOOGLE_BUSINESS_URL = 'https://share.google/11keWnUie9bfzBBoe'
 /** IONOS PHP mail endpoint (copied from public/ into dist/) */
 export const CONTACT_ENDPOINT = '/contact.php'
 

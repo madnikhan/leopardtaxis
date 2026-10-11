@@ -152,3 +152,24 @@ export function GoogleMark({ className, size = 28 }: IconProps) {
     </svg>
   )
 }
+
+export function IconStarFilled({ className, size = 14 }: IconProps) {
+  return (
+    <svg className={className} width={size} height={size} viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        fill="currentColor"
+        d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.8 6.8 19.6l1-5.8L3.5 9.7l5.9-.9L12 3.5z"
+      />
+    </svg>
+  )
+}
+
+export function FiveStarRow({ className, size = 14 }: IconProps) {
+  return (
+    <span className={className ?? 'google-stars'} aria-hidden="true">
+      {Array.from({ length: 5 }).map((_, i) => (
+        <IconStarFilled key={i} size={size} />
+      ))}
+    </span>
+  )
+}

@@ -1421,10 +1421,28 @@ button {
   color: inherit;
 }
 
-.footer__stars {
-  display: flex;
-  gap: 0.15rem;
+.google-stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.12rem;
   color: var(--gold);
+  line-height: 1;
+}
+
+.footer__stars {
+  margin-top: 0.2rem;
+}
+
+.footer__profile-link {
+  margin-top: 0.25rem;
+  font-size: 0.82rem !important;
+  color: rgba(245, 240, 230, 0.85) !important;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.footer__profile-link:hover {
+  color: var(--gold) !important;
 }
 
 .footer__brand {
@@ -2013,6 +2031,40 @@ button {
   font-weight: 600;
   font-size: 1rem;
   word-break: break-word;
+}
+
+.contact-page__card--google {
+  align-items: flex-start;
+}
+
+.contact-page__review-link {
+  display: block;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--cream);
+  word-break: break-word;
+}
+
+.contact-page__review-link:hover {
+  color: var(--gold);
+}
+
+.contact-page__stars {
+  display: flex;
+  margin-top: 0.35rem;
+}
+
+.contact-page__profile-link {
+  display: inline-block;
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  color: rgba(245, 240, 230, 0.9);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.contact-page__profile-link:hover {
+  color: var(--gold);
 }
 
 /* —— Services page blocks —— */

@@ -1,5 +1,6 @@
 import { LeopardMark, Logo } from '../assets/Logo'
 import {
+  FiveStarRow,
   GoogleMark,
   IconMail,
   IconPhone,
@@ -9,6 +10,7 @@ import {
 import {
   EMAIL,
   EMAIL_HREF,
+  GOOGLE_BUSINESS_URL,
   GOOGLE_REVIEW_URL,
   PHONE_TEL,
   WHATSAPP_DISPLAY,
@@ -55,19 +57,17 @@ export function Footer() {
           <div className="footer__item-copy">
             <small>Google Reviews</small>
             <a href={GOOGLE_REVIEW_URL} target="_blank" rel="noreferrer">
-              Please leave a review
+              5 star reviews on Google
             </a>
-            <div className="footer__stars" aria-hidden="true">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill="none">
-                  <path
-                    stroke="currentColor"
-                    strokeWidth="1.6"
-                    d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.8 6.8 19.6l1-5.8L3.5 9.7l5.9-.9L12 3.5z"
-                  />
-                </svg>
-              ))}
-            </div>
+            <FiveStarRow className="footer__stars google-stars" />
+            <a
+              className="footer__profile-link"
+              href={GOOGLE_BUSINESS_URL}
+              target="_blank"
+              rel="noreferrer"
+            >
+              View Google Business Profile
+            </a>
           </div>
         </div>
       </div>

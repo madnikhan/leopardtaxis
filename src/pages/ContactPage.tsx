@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import type { FormEvent } from 'react'
 import {
+  FiveStarRow,
   GoogleMark,
   IconMail,
   IconPhone,
@@ -10,6 +11,7 @@ import {
   CONTACT_ENDPOINT,
   EMAIL,
   EMAIL_HREF,
+  GOOGLE_BUSINESS_URL,
   GOOGLE_REVIEW_URL,
   PHONE_TEL,
   WHATSAPP_DISPLAY,
@@ -180,18 +182,29 @@ export function ContactPage() {
                 <strong>{EMAIL}</strong>
               </div>
             </a>
-            <a
-              className="contact-page__card"
-              href={GOOGLE_REVIEW_URL}
-              target="_blank"
-              rel="noreferrer"
-            >
+            <div className="contact-page__card contact-page__card--google">
               <GoogleMark size={28} />
               <div>
                 <small>Google Reviews</small>
-                <strong>Please leave a review</strong>
+                <a
+                  className="contact-page__review-link"
+                  href={GOOGLE_REVIEW_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Leave a 5 star review
+                </a>
+                <FiveStarRow className="google-stars contact-page__stars" />
+                <a
+                  className="contact-page__profile-link"
+                  href={GOOGLE_BUSINESS_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  View business profile
+                </a>
               </div>
-            </a>
+            </div>
           </div>
         </div>
       </section>

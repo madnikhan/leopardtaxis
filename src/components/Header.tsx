@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
-import { IconWhatsApp, MetaTick } from '../assets/Icons'
+import { MetaTick, WhatsAppBadge } from '../assets/Icons'
 import { Logo } from '../assets/Logo'
 import { PHONE_TEL, WHATSAPP_DISPLAY, WHATSAPP_URL } from '../constants'
 
@@ -31,9 +31,9 @@ function HeaderContact({
         rel="noreferrer"
         aria-label="WhatsApp — Meta Verified Business"
       >
-        <IconWhatsApp size={18} />
+        <WhatsAppBadge size={20} />
         <span className="header__wa-text">WhatsApp</span>
-        <MetaTick size={16} />
+        <MetaTick size={20} />
         {showMetaLabel ? (
           <span className="header__meta-label">Meta Verified Business</span>
         ) : null}

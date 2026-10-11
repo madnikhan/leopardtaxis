@@ -53,7 +53,7 @@ export function Logo({
       )}
       {showVerified && (
         <span className="logo__verified logo__verified--compact" title="Meta Verified Business">
-          <MetaTick size={20} />
+          <MetaTick size={18} />
           <span className="logo__verified-label">Meta Verified</span>
         </span>
       )}

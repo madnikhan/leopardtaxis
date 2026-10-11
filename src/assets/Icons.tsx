@@ -93,6 +93,25 @@ export function IconWhatsApp({ className, size = 28 }: IconProps) {
   )
 }
 
+/** Official-style green circular WhatsApp badge */
+export function WhatsAppBadge({ className, size = 28 }: IconProps) {
+  return (
+    <svg
+      className={className}
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <circle cx="12" cy="12" r="12" fill="#25D366" />
+      <path
+        fill="#fff"
+        d="M12.04 5.2c-3.55 0-6.43 2.86-6.43 6.38 0 1.27.34 2.51.98 3.6L5.9 18.7l3.64-1.18a6.4 6.4 0 0 0 3.4.93h.01c3.55 0 6.43-2.86 6.43-6.38 0-3.52-2.88-6.38-6.34-6.38zm3.74 9.06c-.16.44-.92.84-1.28.9-.33.05-.74.07-1.2-.08a9.3 9.3 0 0 1-1.08-.4c-1.91-.83-3.15-2.75-3.25-2.87-.1-.13-.77-1.02-.77-1.95s.48-1.38.66-1.57c.17-.18.38-.23.5-.23h.36c.12 0 .27-.05.42.32.16.38.53 1.3.58 1.39.05.09.08.2.01.32-.06.13-.09.21-.18.32-.09.11-.2.25-.27.33-.09.09-.18.19-.08.37.1.18.46.75.98 1.21.67.6 1.23.78 1.41.87.18.08.28.07.38-.05.1-.11.44-.51.56-.69.12-.18.23-.15.4-.09.16.06 1.01.48 1.18.56.17.09.29.13.33.2.04.07.04.43-.11.87z"
+      />
+    </svg>
+  )
+}
+
 export function MetaTick({ className, size = 18 }: { className?: string; size?: number }) {
   return (
     <svg

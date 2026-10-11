@@ -3,8 +3,8 @@ import {
   GoogleMark,
   IconMail,
   IconPhone,
-  IconWhatsApp,
   MetaTick,
+  WhatsAppBadge,
 } from '../assets/Icons'
 import {
   EMAIL,
@@ -25,11 +25,17 @@ export function Footer() {
             <small>Call or WhatsApp</small>
             <a href={PHONE_TEL}>{WHATSAPP_DISPLAY}</a>
             <div className="footer__badges">
-              <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" aria-label="WhatsApp">
-                <IconWhatsApp size={18} />
+              <a
+                className="footer__badge-link"
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="WhatsApp"
+              >
+                <WhatsAppBadge size={28} />
               </a>
               <span className="meta-inline" title="Meta Verified Business">
-                <MetaTick size={16} />
+                <MetaTick size={28} />
                 <span>Meta Verified Business</span>
               </span>
             </div>

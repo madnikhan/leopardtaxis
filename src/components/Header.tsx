@@ -15,15 +15,19 @@ const LINKS = [
 function HeaderContact({
   className = '',
   showMetaLabel = false,
+  showPhone = true,
 }: {
   className?: string
   showMetaLabel?: boolean
+  showPhone?: boolean
 }) {
   return (
     <div className={`header__contact ${className}`.trim()}>
-      <a className="header__phone" href={PHONE_TEL}>
-        {WHATSAPP_DISPLAY}
-      </a>
+      {showPhone ? (
+        <a className="header__phone" href={PHONE_TEL}>
+          {WHATSAPP_DISPLAY}
+        </a>
+      ) : null}
       <a
         className="header__wa"
         href={WHATSAPP_URL}
@@ -91,7 +95,7 @@ export function Header() {
           ))}
           <HeaderContact className="header__contact--mobile" showMetaLabel />
         </nav>
-        <HeaderContact className="header__contact--bar" />
+        <HeaderContact className="header__contact--bar" showPhone={false} />
         <button
           type="button"
           className={`header__toggle ${open ? 'is-open' : ''}`}

@@ -1,4 +1,4 @@
-import { HEATHROW_FARES, WHATSAPP_URL } from '../constants'
+import { HEATHROW_FARES, PHONE_TEL, WHATSAPP_DISPLAY, WHATSAPP_URL } from '../constants'
 
 export function Hero() {
   return (
@@ -39,6 +39,9 @@ export function Hero() {
             <div>
               <p className="hero__fares-eyebrow">Heathrow London</p>
               <h1 className="hero__fares-title">Fare Guideline to Heathrow</h1>
+              <a className="hero__fares-phone" href={PHONE_TEL}>
+                {WHATSAPP_DISPLAY}
+              </a>
             </div>
             <span className="fare-discount" title="5% discount on return journeys">
               5% OFF

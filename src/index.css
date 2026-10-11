@@ -573,6 +573,20 @@ button {
   line-height: 1.15;
 }
 
+.hero__fares-phone {
+  display: inline-block;
+  margin-top: 0.55rem;
+  color: var(--gold-bright);
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.hero__fares-phone:hover {
+  color: var(--gold);
+}
+
 .fare-discount {
   flex-shrink: 0;
   display: inline-flex;

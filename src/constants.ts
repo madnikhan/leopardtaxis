@@ -1,5 +1,5 @@
 export const WHATSAPP_NUMBER = '447947745958'
-export const WHATSAPP_DISPLAY = '07947745958'
+export const WHATSAPP_DISPLAY = '+44 794 774 5958'
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Hi Leopard Taxis, I would like to get a quote.')}`
 export const PHONE_TEL = 'tel:+447947745958'
 export const EMAIL = 'info@leopardtaxis.co.uk'

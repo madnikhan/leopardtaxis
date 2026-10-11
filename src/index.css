@@ -1577,8 +1577,11 @@ button {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .dest-card {
-    min-height: 0;
+  .dest-card,
+  .dest-grid--wide .dest-card {
+    min-height: 160px;
+    max-height: none;
+    aspect-ratio: 4 / 3;
   }
 
   .footer__contact {

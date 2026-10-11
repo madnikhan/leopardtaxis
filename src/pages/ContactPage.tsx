@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import type { FormEvent } from 'react'
 import {
   GoogleMark,
@@ -16,10 +16,27 @@ import {
   WHATSAPP_URL,
 } from '../constants'
 
-type Status = 'idle' | 'sending' | 'success' | 'error'
+type Status = 'idle' | 'sending' | 'error'
+
+function isFormSubmitSuccess(payload: unknown): boolean {
+  if (!payload || typeof payload !== 'object') return false
+  const success = (payload as { success?: unknown }).success
+  return success === true || success === 'true'
+}
 
 export function ContactPage() {
   const [status, setStatus] = useState<Status>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
+  const [showSuccess, setShowSuccess] = useState(false)
+
+  useEffect(() => {
+    if (!showSuccess) return
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setShowSuccess(false)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [showSuccess])
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -27,14 +44,19 @@ export function ContactPage() {
     const data = new FormData(form)
 
     if (String(data.get('_gotcha') || '').trim()) {
-      setStatus('success')
+      setShowSuccess(true)
+      form.reset()
       return
     }
 
     setStatus('sending')
+    setErrorMessage('')
+
+    const replyTo = String(data.get('email') || '').trim()
     data.append('_subject', 'New enquiry from Leopard Taxis website')
     data.append('_template', 'table')
     data.append('_captcha', 'false')
+    if (replyTo) data.append('_replyto', replyTo)
 
     try {
       const response = await fetch(FORMSUBMIT_ENDPOINT, {
@@ -42,11 +64,36 @@ export function ContactPage() {
         body: data,
         headers: { Accept: 'application/json' },
       })
-      if (!response.ok) throw new Error('Failed')
-      setStatus('success')
+
+      let payload: unknown = null
+      try {
+        payload = await response.json()
+      } catch {
+        payload = null
+      }
+
+      if (!response.ok || !isFormSubmitSuccess(payload)) {
+        const message =
+          payload &&
+          typeof payload === 'object' &&
+          'message' in payload &&
+          typeof (payload as { message: unknown }).message === 'string'
+            ? (payload as { message: string }).message
+            : ''
+        throw new Error(message || 'Failed')
+      }
+
+      setStatus('idle')
+      setShowSuccess(true)
       form.reset()
-    } catch {
+    } catch (error) {
       setStatus('error')
+      const message = error instanceof Error ? error.message : ''
+      setErrorMessage(
+        message && /activat/i.test(message)
+          ? message
+          : `Something went wrong. Please email us at ${EMAIL} or try WhatsApp.`,
+      )
     }
   }
 
@@ -107,14 +154,9 @@ export function ContactPage() {
               {status === 'sending' ? 'Sending…' : 'Send message'}
             </button>
 
-            {status === 'success' && (
-              <p className="contact-form__status contact-form__status--ok" role="status">
-                Thank you — your message has been sent. We will reply soon.
-              </p>
-            )}
             {status === 'error' && (
               <p className="contact-form__status contact-form__status--err" role="alert">
-                Something went wrong. Please email us at {EMAIL} or try WhatsApp.
+                {errorMessage}
               </p>
             )}
           </form>
@@ -161,6 +203,32 @@ export function ContactPage() {
           </div>
         </div>
       </section>
+
+      {showSuccess ? (
+        <div
+          className="contact-modal"
+          role="presentation"
+          onClick={() => setShowSuccess(false)}
+        >
+          <div
+            className="contact-modal__panel"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="contact-success-title"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <h2 id="contact-success-title">Message sent</h2>
+            <p>Thank you — your message has been sent. We will reply soon.</p>
+            <button
+              type="button"
+              className="btn-gold btn-gold--sm"
+              onClick={() => setShowSuccess(false)}
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      ) : null}
     </>
   )
 }

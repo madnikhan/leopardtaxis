@@ -1,0 +1,15 @@
+# IONOS / Apache — SPA fallback for React Router
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Keep real files and directories
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+
+  # Send all other routes to the app shell
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# Optional: prevent directory listing
+Options -Indexes

@@ -9,7 +9,7 @@ const VEHICLES = [
     name: 'Estate',
     src: '/images/fleet-estate.jpg',
     detail:
-      'Extra boot space for suitcases, golf bags or shopping. Perfect for families and travellers with more luggage without moving up to an MPV.',
+      'Extra boot space for suitcases or shopping. Perfect for families and travellers with more luggage without moving up to an MPV.',
   },
   {
     name: 'Executive',
@@ -21,13 +21,13 @@ const VEHICLES = [
     name: '6 Seaters',
     src: '/images/fleet-6seater.jpg',
     detail:
-      'Spacious black MPV-style people carrier for up to 6 passengers. Great for families, small groups and airport transfers with multiple bags.',
+      'Spacious MPV-style people carrier for up to 6 passengers. Great for families, small groups and airport transfers with multiple bags.',
   },
   {
     name: '8 Seaters',
     src: '/images/fleet-8seater.jpg',
     detail:
-      'Black Mercedes-Benz Vito people carrier for up to 8 passengers. Ideal for group days out, sports teams, weddings and multi-family airport trips.',
+      'Mercedes Vito or similar style minibus for up to 8 passengers. Ideal for group days out, sports teams, weddings and multi-family airport trips.',
   },
 ]
 

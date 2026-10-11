@@ -1414,6 +1414,11 @@ button {
     margin-left: 0.15rem;
   }
 
+  /* Nav is absolute — push phone / WA / hamburger to the right edge */
+  .header__contact--bar {
+    margin-left: auto;
+  }
+
   .logo__verified-label {
     display: none;
   }
@@ -1510,15 +1515,6 @@ button {
 
   .dest-card {
     min-height: 0;
-  }
-
-  .area-card {
-    grid-template-columns: 1fr;
-  }
-
-  .area-card__media {
-    aspect-ratio: 16 / 9;
-    max-height: 140px;
   }
 
   .footer__contact {
@@ -2014,8 +2010,10 @@ button {
   transition: transform 0.35s ease;
 }
 
-.area-card:hover .area-card__media img {
-  transform: scale(1.05);
+@media (hover: hover) and (pointer: fine) {
+  .area-card:hover .area-card__media img {
+    transform: scale(1.05);
+  }
 }
 
 .area-card__body {
@@ -2243,7 +2241,30 @@ button {
     gap: 1rem;
   }
 
-  .area-card,
+  /* After base .area-card (1fr 2fr) so stack wins on phones */
+  .area-card {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+
+  .area-card__media {
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+    max-height: 140px;
+  }
+
+  .area-card__body {
+    padding: 1rem 1.05rem 1.15rem;
+  }
+
+  .area-card__body h2 {
+    font-size: 1.4rem;
+  }
+
+  .area-card:hover .area-card__media img {
+    transform: none;
+  }
+
   .fleet-card,
   .service-block,
   .contact-form {

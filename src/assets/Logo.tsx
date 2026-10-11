@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { VerifiedBadge } from './Icons'
+import { MetaTick } from './Icons'
 
 type LogoProps = {
   className?: string
@@ -40,7 +40,7 @@ export function Logo({
       aria-label="Leopard Taxis home"
       onClick={onNavigate}
     >
-      <LeopardMark className="logo__mark" size={64} />
+      <LeopardMark className="logo__mark" size={56} />
       {showText && (
         <span className="logo__text">
           <span className="logo__name">LEOPARD</span>
@@ -51,7 +51,12 @@ export function Logo({
           </span>
         </span>
       )}
-      {showVerified && <VerifiedBadge className="logo__verified" />}
+      {showVerified && (
+        <span className="logo__verified logo__verified--compact" title="Meta Verified Business">
+          <MetaTick size={20} />
+          <span className="logo__verified-label">Meta Verified</span>
+        </span>
+      )}
     </Link>
   )
 }

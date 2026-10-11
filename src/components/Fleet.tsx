@@ -37,8 +37,11 @@ type FleetProps = {
 
 export function Fleet({ showHeader = true }: FleetProps) {
   return (
-    <section className="fleet" aria-label="Our fleet">
-      <div className="container">
+    <section
+      className={`fleet${showHeader ? '' : ' fleet--embedded'}`}
+      aria-label="Our fleet"
+    >
+      <div className={showHeader ? 'container' : undefined}>
         {showHeader ? (
           <div className="fleet__header">
             <h2>Our Fleet</h2>

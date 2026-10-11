@@ -12,7 +12,13 @@ const LINKS = [
   { to: '/contact', label: 'Contact' },
 ]
 
-function HeaderContact({ className = '' }: { className?: string }) {
+function HeaderContact({
+  className = '',
+  showMetaLabel = false,
+}: {
+  className?: string
+  showMetaLabel?: boolean
+}) {
   return (
     <div className={`header__contact ${className}`.trim()}>
       <a className="header__phone" href={PHONE_TEL}>
@@ -26,9 +32,11 @@ function HeaderContact({ className = '' }: { className?: string }) {
         aria-label="WhatsApp — Meta Verified Business"
       >
         <IconWhatsApp size={18} />
-        <span>WhatsApp</span>
+        <span className="header__wa-text">WhatsApp</span>
         <MetaTick size={16} />
-        <span className="header__meta-label">Meta Verified Business</span>
+        {showMetaLabel ? (
+          <span className="header__meta-label">Meta Verified Business</span>
+        ) : null}
       </a>
     </div>
   )
@@ -51,10 +59,16 @@ export function Header() {
     setOpen(false)
   }, [pathname])
 
+  useEffect(() => {
+    document.body.classList.toggle('nav-open', open)
+    return () => document.body.classList.remove('nav-open')
+  }, [open])
+
   const classes = [
     'header',
     !isHome || scrolled ? 'header--solid' : 'header--home',
     scrolled ? 'header--scrolled' : '',
+    open ? 'header--menu-open' : '',
   ]
     .filter(Boolean)
     .join(' ')
@@ -75,9 +89,9 @@ export function Header() {
               {link.label}
             </NavLink>
           ))}
-          <HeaderContact className="header__contact--mobile" />
+          <HeaderContact className="header__contact--mobile" showMetaLabel />
         </nav>
-        <HeaderContact className="header__contact--desktop" />
+        <HeaderContact className="header__contact--bar" />
         <button
           type="button"
           className={`header__toggle ${open ? 'is-open' : ''}`}

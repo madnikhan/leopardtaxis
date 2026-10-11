@@ -9,7 +9,7 @@ export function FleetPage() {
         title="Our Fleet"
         subtitle="A range of vehicles to suit your needs — from saloon to 8-seaters."
       />
-      <section className="page-section">
+      <section className="page-section page-section--fleet">
         <Fleet showHeader={false} />
         <div className="container page-section__cta">
           <a

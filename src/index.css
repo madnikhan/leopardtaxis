@@ -15,7 +15,7 @@
   --text-muted: rgba(255, 255, 255, 0.82);
   --shadow-soft: 0 12px 40px rgba(8, 35, 26, 0.28);
   --radius: 14px;
-  --header-h: 88px;
+  --header-h: 76px;
   --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-body: 'DM Sans', 'Segoe UI', sans-serif;
   --font-script: 'Great Vibes', cursive;
@@ -64,6 +64,10 @@ button {
   overflow-x: clip;
 }
 
+.site > main {
+  padding-bottom: 5.5rem;
+}
+
 .container {
   width: min(100% - 2.5rem, var(--max));
   margin-inline: auto;
@@ -85,17 +89,34 @@ button {
 
 .logo__mark {
   flex-shrink: 0;
-  width: 64px;
-  height: 64px;
+  width: 52px;
+  height: 52px;
   object-fit: contain;
   background: transparent;
   filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
 }
 
 .logo__verified {
-  margin-left: 0.15rem;
-  flex-shrink: 1;
-  min-width: 0;
+  margin-left: 0.2rem;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.logo__verified--compact {
+  padding: 0;
+  border: none;
+  background: none;
+  max-width: none;
+}
+
+.logo__verified-label {
+  font-size: 0.62rem;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
 .logo__text {
@@ -103,16 +124,17 @@ button {
   flex-direction: column;
   line-height: 1;
   letter-spacing: 0.14em;
+  min-width: 0;
 }
 
 .logo__name {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1.38rem;
+  font-size: 1.28rem;
 }
 
 .logo__name--sub {
-  font-size: 0.8rem;
+  font-size: 0.74rem;
   letter-spacing: 0.28em;
   font-weight: 600;
 }
@@ -221,15 +243,16 @@ button {
 .header__inner {
   height: 100%;
   display: flex;
+  flex-wrap: nowrap;
   align-items: center;
-  justify-content: space-between;
-  gap: 0.85rem;
+  justify-content: flex-start;
+  gap: 0.75rem;
 }
 
 .header__contact {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.55rem;
   flex-shrink: 0;
 }
 
@@ -237,10 +260,14 @@ button {
   display: none;
 }
 
+.header__contact--bar {
+  margin-left: 0.25rem;
+}
+
 .header__phone {
   color: var(--gold-bright);
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   letter-spacing: 0.02em;
   white-space: nowrap;
 }
@@ -278,19 +305,21 @@ button {
 
 .nav {
   display: flex;
+  flex-wrap: nowrap;
   align-items: center;
-  gap: 1.25rem;
+  gap: 0.9rem;
   margin-left: auto;
 }
 
 .nav a {
   color: var(--white);
-  font-size: 0.92rem;
+  font-size: 0.86rem;
   font-weight: 500;
   letter-spacing: 0.02em;
   position: relative;
   padding: 0.25rem 0;
   transition: color 0.2s ease;
+  white-space: nowrap;
 }
 
 .nav a::after {
@@ -1041,6 +1070,7 @@ button {
 .area-fares li {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 0.75rem;
   padding: 0.65rem 0.8rem;
   border-radius: 8px;
@@ -1050,7 +1080,12 @@ button {
   font-weight: 500;
 }
 
+.area-fares li span {
+  min-width: 0;
+}
+
 .area-fares strong {
+  flex-shrink: 0;
   white-space: nowrap;
   font-family: var(--font-display);
   font-size: 1.2rem;
@@ -1122,6 +1157,16 @@ button {
 .fleet {
   padding: 3.5rem 0 4rem;
   background: linear-gradient(180deg, var(--cream), #efe8d8);
+}
+
+.fleet--embedded {
+  padding: 0;
+  background: transparent;
+}
+
+.page-section .fleet--embedded .fleet__grid {
+  width: min(100% - 2.5rem, var(--max));
+  margin-inline: auto;
 }
 
 .fleet__header {
@@ -1362,50 +1407,66 @@ button {
   }
 }
 
-@media (max-width: 860px) {
-  .logo__verified .verified-badge__copy span {
-    display: none;
-  }
-
+/* Hamburger earlier so nav never wraps into a broken second line */
+@media (max-width: 1100px) {
   .header__toggle {
     display: inline-flex;
+    margin-left: 0.15rem;
   }
 
-  .header__contact--desktop .header__meta-label,
-  .header__contact--desktop .header__wa span:not(.header__meta-label) {
+  .logo__verified-label {
     display: none;
   }
 
-  .header__contact--desktop .header__wa {
+  .header__contact--bar .header__wa-text,
+  .header__contact--bar .header__meta-label {
+    display: none;
+  }
+
+  .header__contact--bar .header__wa {
     padding: 0.35rem;
-    gap: 0.2rem;
+    gap: 0.25rem;
   }
 
   .header__phone {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
   }
 
   .header__contact--mobile {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 0.55rem;
+    align-items: stretch;
+    gap: 0.65rem;
     margin-top: 0.55rem;
-    padding: 0.75rem 1rem 0.5rem;
+    padding: 0.85rem 0.35rem 0.35rem;
     border-top: 1px solid rgba(212, 175, 55, 0.25);
+  }
+
+  .header__contact--mobile .header__wa {
+    flex-wrap: wrap;
+    white-space: normal;
+    max-width: 100%;
+    line-height: 1.35;
+  }
+
+  .header__contact--mobile .header__meta-label {
+    flex: 1 1 auto;
+    min-width: 0;
   }
 
   .nav {
     position: absolute;
-    top: calc(var(--header-h) - 0.4rem);
-    right: 1.25rem;
-    left: 1.25rem;
+    top: calc(var(--header-h) + 0.15rem);
+    right: 0.75rem;
+    left: 0.75rem;
+    z-index: 50;
     flex-direction: column;
+    flex-wrap: nowrap;
     align-items: stretch;
     gap: 0;
-    padding: 0.6rem;
+    padding: 0.55rem;
     border-radius: 12px;
-    background: rgba(8, 35, 26, 0.96);
+    background: rgba(8, 35, 26, 0.98);
     border: 1px solid rgba(212, 175, 55, 0.35);
     box-shadow: var(--shadow-soft);
     opacity: 0;
@@ -1413,6 +1474,8 @@ button {
     transform: translateY(-8px);
     transition: opacity 0.2s ease, transform 0.2s ease;
     margin-left: 0;
+    max-height: calc(100vh - var(--header-h) - 1rem);
+    overflow-y: auto;
   }
 
   .nav.is-open {
@@ -1424,6 +1487,7 @@ button {
   .nav a {
     padding: 0.8rem 1rem;
     border-radius: 8px;
+    white-space: normal;
   }
 
   .nav a:hover {
@@ -1433,7 +1497,9 @@ button {
   .nav a::after {
     display: none;
   }
+}
 
+@media (max-width: 860px) {
   .mid__grid {
     grid-template-columns: 1fr;
   }
@@ -1594,11 +1660,24 @@ button {
   }
 
   .logo__verified {
-    display: flex;
+    display: none;
   }
 
-  .logo__verified .verified-badge__copy {
+  .logo__text {
     display: none;
+  }
+
+  .logo__mark {
+    width: 46px;
+    height: 46px;
+  }
+
+  .header__phone {
+    font-size: 0.78rem;
+  }
+
+  .header__inner {
+    gap: 0.45rem;
   }
 
   .dest-card {
@@ -1646,6 +1725,16 @@ button {
 .page-section {
   padding: 3rem 0 3.5rem;
   background: linear-gradient(180deg, var(--cream), #efe8d8);
+}
+
+.page-section--fleet {
+  padding-bottom: 2.5rem;
+}
+
+@media (max-width: 640px) {
+  .page-section .fleet--embedded .fleet__grid {
+    width: min(100% - 1.5rem, var(--max));
+  }
 }
 
 .page-section__cta {
@@ -1975,12 +2064,6 @@ button {
   padding: 1.5rem 1.4rem;
   display: grid;
   gap: 0.85rem;
-}
-
-.logo__verified.verified-badge,
-.logo .verified-badge {
-  max-width: 190px;
-  padding: 0.28rem 0.55rem 0.28rem 0.28rem;
 }
 
 .contact-form h2 {

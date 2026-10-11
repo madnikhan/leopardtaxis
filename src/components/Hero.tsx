@@ -30,6 +30,9 @@ export function Hero() {
       <div className="hero__shade" aria-hidden="true" />
       <div className="container hero__layout">
         <div className="hero__intro">
+          <a className="hero__phone" href={PHONE_TEL}>
+            {WHATSAPP_DISPLAY}
+          </a>
           <p className="hero__promo">Best airport rates in Warwickshire</p>
           <p className="hero__eyebrow">Safe · Reliable · Comfortable</p>
         </div>
@@ -39,9 +42,6 @@ export function Hero() {
             <div>
               <p className="hero__fares-eyebrow">Heathrow London</p>
               <h1 className="hero__fares-title">Fare Guideline to Heathrow</h1>
-              <a className="hero__fares-phone" href={PHONE_TEL}>
-                {WHATSAPP_DISPLAY}
-              </a>
             </div>
             <span className="fare-discount" title="5% discount on return journeys">
               5% OFF

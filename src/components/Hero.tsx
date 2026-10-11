@@ -1,3 +1,4 @@
+import { IconPhone } from '../assets/Icons'
 import { HEATHROW_FARES, PHONE_TEL, WHATSAPP_DISPLAY, WHATSAPP_URL } from '../constants'
 
 export function Hero() {
@@ -31,7 +32,8 @@ export function Hero() {
       <div className="container hero__layout">
         <div className="hero__intro">
           <a className="hero__phone" href={PHONE_TEL}>
-            {WHATSAPP_DISPLAY}
+            <IconPhone className="hero__phone-icon" size={20} />
+            <span>{WHATSAPP_DISPLAY}</span>
           </a>
           <p className="hero__promo">Best airport rates in Warwickshire</p>
           <p className="hero__eyebrow">Safe · Reliable · Comfortable</p>

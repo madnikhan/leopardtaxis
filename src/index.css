@@ -639,7 +639,7 @@ button {
   box-shadow:
     0 6px 16px rgba(0, 0, 0, 0.35),
     inset 0 1px 0 rgba(255, 255, 255, 0.12);
-  color: #fff;
+  color: #ffe566;
   font-family: var(--font-body);
   font-size: clamp(1.05rem, 3.2vw, 1.25rem);
   font-weight: 700;
@@ -648,14 +648,22 @@ button {
   white-space: nowrap;
 }
 
+.hero__phone span {
+  background: linear-gradient(180deg, #fff8d6 0%, #ffe566 40%, #f0c93a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #ffe566;
+}
+
 .hero__phone-icon {
   flex-shrink: 0;
-  color: #fff;
+  color: #ffe566;
 }
 
 .hero__phone:hover {
   filter: brightness(1.08);
-  color: #fff;
+  color: #ffe566;
 }
 
 .hero__promo {

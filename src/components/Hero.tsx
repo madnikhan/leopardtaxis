@@ -45,10 +45,6 @@ export function Hero() {
               <p className="hero__fares-eyebrow">Heathrow London</p>
               <h1 className="hero__fares-title">Fare Guideline to Heathrow</h1>
             </div>
-            <span className="fare-discount" title="5% discount on return journeys">
-              5% OFF
-              <small>return journeys</small>
-            </span>
           </div>
           <ul className="hero__fares-list">
             {HEATHROW_FARES.map((fare) => (

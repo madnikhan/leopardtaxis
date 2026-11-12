@@ -624,34 +624,6 @@ button {
   line-height: 1.15;
 }
 
-.fare-discount {
-  flex-shrink: 0;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.1rem;
-  padding: 0.45rem 0.55rem;
-  border-radius: 6px;
-  background: linear-gradient(180deg, #ff3b3b, #c62828);
-  color: #fff;
-  font-weight: 800;
-  font-size: 0.78rem;
-  letter-spacing: 0.04em;
-  line-height: 1.1;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(198, 40, 40, 0.45);
-  transform: rotate(-6deg);
-}
-
-.fare-discount small {
-  font-size: 0.55rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  opacity: 0.95;
-}
-
 .hero__fares-list {
   list-style: none;
   margin: 0;
@@ -1876,11 +1848,6 @@ button {
     gap: 0.7rem;
     min-height: 0;
     align-content: center;
-  }
-
-  .fare-discount {
-    font-size: 0.7rem;
-    padding: 0.4rem 0.45rem;
   }
 
   .contact-form__row {

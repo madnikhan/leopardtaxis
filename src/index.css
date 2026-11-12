@@ -113,8 +113,9 @@ button {
 .verified-row {
   display: inline-flex;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 0.35rem 0.55rem;
+  flex-wrap: nowrap;
+  gap: 0.4rem;
+  line-height: 1;
 }
 
 .verified-row__item {
@@ -125,14 +126,38 @@ button {
   font-size: 0.72rem;
   font-weight: 600;
   line-height: 1;
-}
-
-.verified-row__item svg {
   flex-shrink: 0;
 }
 
+.verified-row__item svg,
+.verified-row__item .google-verified-badge {
+  flex-shrink: 0;
+}
+
+.google-verified-badge {
+  position: relative;
+  display: inline-flex;
+  width: fit-content;
+  height: fit-content;
+  line-height: 0;
+}
+
+.google-verified-badge__check {
+  position: absolute;
+  right: -3px;
+  bottom: -2px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1.5px rgba(8, 35, 26, 0.95);
+}
+
 .header__verified {
-  margin-left: 0.15rem;
+  margin-left: 0.2rem;
+  align-self: center;
+}
+
+.header__verified--labels {
+  flex-wrap: wrap;
+  gap: 0.45rem 0.65rem;
 }
 
 .header__verified--labels .verified-row__item span {
@@ -140,7 +165,9 @@ button {
 }
 
 .footer__verified {
-  margin-top: 0.15rem;
+  margin-top: 0.2rem;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.7rem;
 }
 
 .footer__verified .verified-row__item {
@@ -1366,6 +1393,113 @@ button {
   gap: 1rem;
   padding: 1.6rem 0;
   border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+  align-items: start;
+}
+
+.footer__reviews-band {
+  grid-column: 1 / -1;
+  min-width: 0;
+  margin-top: 0.35rem;
+}
+
+.footer__reviews-summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.55rem;
+}
+
+.footer__reviews-score {
+  font-size: 1.15rem !important;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.footer__reviews-note {
+  margin: 0.25rem 0 0;
+  font-size: 0.75rem;
+  color: rgba(245, 240, 230, 0.7);
+}
+
+.reviews-marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+}
+
+.reviews-marquee__track {
+  display: flex;
+  gap: 0.85rem;
+  width: max-content;
+  animation: reviews-marquee 42s linear infinite;
+}
+
+.reviews-marquee:hover .reviews-marquee__track {
+  animation-play-state: paused;
+}
+
+.reviews-card {
+  flex: 0 0 min(280px, 78vw);
+  max-width: 300px;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  color: var(--cream);
+}
+
+.reviews-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.reviews-card__top strong {
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.reviews-card p {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: rgba(245, 240, 230, 0.9);
+}
+
+.reviews-card small {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.68rem;
+  color: rgba(245, 240, 230, 0.55);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.reviews-card__star--empty {
+  opacity: 0.28;
+}
+
+@keyframes reviews-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reviews-marquee__track {
+    animation: none;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .reviews-marquee__track .reviews-card:nth-child(n + 6) {
+    display: none;
+  }
 }
 
 .footer__item {
@@ -1573,17 +1707,25 @@ button {
     font-size: 0.72rem;
   }
 
-  .logo__verified .verified-row {
-    gap: 0.2rem;
+  /* Avoid duplicate/overlapping verified icons on the wordmark */
+  .logo__verified {
+    display: none;
+  }
+
+  .header__contact--bar {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
   }
 
   .header__contact--bar .header__wa-text,
-  .header__contact--bar .header__verified--labels .verified-row__item span {
+  .header__contact--bar .header__verified .verified-row__item span {
     display: none;
   }
 
-  .header__contact--bar .header__verified .verified-row__item span {
-    display: none;
+  .header__contact--bar .header__verified {
+    flex-wrap: nowrap;
+    gap: 0.28rem;
   }
 
   .header__contact--bar .header__wa {
@@ -1613,7 +1755,14 @@ button {
   }
 
   .header__contact--mobile .header__verified {
+    display: flex;
     flex-wrap: wrap;
+    gap: 0.5rem 0.75rem;
+    padding-top: 0.15rem;
+  }
+
+  .header__contact--mobile .verified-row__item {
+    min-height: 1.25rem;
   }
 
   .header__contact--mobile .verified-row__item span {
@@ -1848,12 +1997,7 @@ button {
   }
 
   .logo__verified {
-    display: inline-flex;
-    margin-left: 0.1rem;
-  }
-
-  .logo__verified .verified-row {
-    gap: 0.15rem;
+    display: none;
   }
 
   .header__phone {

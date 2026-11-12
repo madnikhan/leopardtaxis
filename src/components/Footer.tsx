@@ -1,17 +1,9 @@
 import { LeopardMark, Logo } from '../assets/Logo'
-import {
-  FiveStarRow,
-  GoogleMark,
-  IconMail,
-  IconPhone,
-  VerifiedMarks,
-  WhatsAppBadge,
-} from '../assets/Icons'
+import { IconMail, IconPhone, VerifiedMarks, WhatsAppBadge } from '../assets/Icons'
+import { GoogleReviewsFooter } from './GoogleReviews'
 import {
   EMAIL,
   EMAIL_HREF,
-  GOOGLE_BUSINESS_URL,
-  GOOGLE_REVIEW_URL,
   PHONE_TEL,
   WHATSAPP_DISPLAY,
   WHATSAPP_URL,
@@ -49,24 +41,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="footer__item">
-          <GoogleMark size={28} />
-          <div className="footer__item-copy">
-            <small>Google Reviews</small>
-            <a href={GOOGLE_REVIEW_URL} target="_blank" rel="noreferrer">
-              5 star reviews on Google
-            </a>
-            <FiveStarRow className="footer__stars google-stars" />
-            <a
-              className="footer__profile-link"
-              href={GOOGLE_BUSINESS_URL}
-              target="_blank"
-              rel="noreferrer"
-            >
-              View Google Business Profile
-            </a>
-          </div>
-        </div>
+        <GoogleReviewsFooter />
       </div>
 
       <div className="container footer__brand">

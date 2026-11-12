@@ -8,6 +8,8 @@ export const GOOGLE_REVIEW_URL = 'https://g.page/r/CX_xvXJIL8xxEBM/review'
 export const GOOGLE_BUSINESS_URL = 'https://share.google/11keWnUie9bfzBBoe'
 /** IONOS PHP mail endpoint (copied from public/ into dist/) */
 export const CONTACT_ENDPOINT = '/contact.php'
+/** IONOS PHP Places reviews proxy (copied from public/ into dist/) */
+export const REVIEWS_ENDPOINT = '/reviews.php'
 
 export const HEATHROW_FARES = [
   { route: 'Leamington / Warwick', price: '£130' },

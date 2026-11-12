@@ -97,11 +97,10 @@ button {
 }
 
 .logo__verified {
-  margin-left: 0.2rem;
+  margin-left: 0.35rem;
   flex-shrink: 0;
   display: inline-flex;
   align-items: center;
-  gap: 0.3rem;
 }
 
 .logo__verified--compact {
@@ -111,12 +110,41 @@ button {
   max-width: none;
 }
 
-.logo__verified-label {
-  font-size: 0.62rem;
+.verified-row {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.55rem;
+}
+
+.verified-row__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28rem;
+  color: var(--cream);
+  font-size: 0.72rem;
   font-weight: 600;
-  color: var(--white);
-  letter-spacing: 0.02em;
-  white-space: nowrap;
+  line-height: 1;
+}
+
+.verified-row__item svg {
+  flex-shrink: 0;
+}
+
+.header__verified {
+  margin-left: 0.15rem;
+}
+
+.header__verified--labels .verified-row__item span {
+  color: var(--cream);
+}
+
+.footer__verified {
+  margin-top: 0.15rem;
+}
+
+.footer__verified .verified-row__item {
+  font-size: 0.78rem;
 }
 
 .logo__text {
@@ -297,10 +325,6 @@ button {
 
 .header__wa svg {
   flex-shrink: 0;
-}
-
-.header__meta-label {
-  color: var(--cream);
 }
 
 .nav {
@@ -1129,6 +1153,10 @@ button {
   flex-shrink: 0;
 }
 
+.footer__badges .verified-row {
+  width: 100%;
+}
+
 .area-fares {
   list-style: none;
   margin: 0.75rem 0 0;
@@ -1404,16 +1432,8 @@ button {
   filter: brightness(1.05);
 }
 
-.footer__badges .meta-inline {
-  gap: 0.4rem;
-  font-size: 0.78rem;
+.footer__badges .verified-row__item {
   color: var(--cream);
-}
-
-.footer__badges .meta-inline svg {
-  width: 28px;
-  height: 28px;
-  flex-shrink: 0;
 }
 
 /* Footer phone icon stays gold; badge SVGs keep brand colors */
@@ -1553,16 +1573,16 @@ button {
     font-size: 0.72rem;
   }
 
-  .logo__verified-label {
-    display: inline;
-    font-size: 0.58rem;
-    max-width: 4.5rem;
-    white-space: normal;
-    line-height: 1.15;
+  .logo__verified .verified-row {
+    gap: 0.2rem;
   }
 
   .header__contact--bar .header__wa-text,
-  .header__contact--bar .header__meta-label {
+  .header__contact--bar .header__verified--labels .verified-row__item span {
+    display: none;
+  }
+
+  .header__contact--bar .header__verified .verified-row__item span {
     display: none;
   }
 
@@ -1592,9 +1612,12 @@ button {
     line-height: 1.35;
   }
 
-  .header__contact--mobile .header__meta-label {
-    flex: 1 1 auto;
-    min-width: 0;
+  .header__contact--mobile .header__verified {
+    flex-wrap: wrap;
+  }
+
+  .header__contact--mobile .verified-row__item span {
+    font-size: 0.7rem;
   }
 
   .nav {
@@ -1829,10 +1852,8 @@ button {
     margin-left: 0.1rem;
   }
 
-  .logo__verified-label {
-    display: inline;
-    font-size: 0.55rem;
-    max-width: 3.6rem;
+  .logo__verified .verified-row {
+    gap: 0.15rem;
   }
 
   .header__phone {

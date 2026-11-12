@@ -18,42 +18,42 @@ const AREAS: AreaFares[] = [
   {
     name: 'Warwick & Leamington Spa',
     image: '/images/areas/area-warwick.jpg',
-    fares: ['from £40', 'from £130', 'from £170', 'from £100'],
+    fares: ['£40', '£130', '£170', '£100'],
   },
   {
     name: 'Stratford upon Avon',
     image: '/images/areas/area-stratford.jpg',
-    fares: ['from £50', 'from £145', 'from £185', 'from £115'],
+    fares: ['£50', '£145', '£185', '£115'],
   },
   {
     name: 'Kenilworth',
     image: '/images/areas/area-kenilworth.jpg',
-    fares: ['from £35', 'from £145', 'from £185', 'from £115'],
+    fares: ['£35', '£145', '£185', '£115'],
   },
   {
     name: 'Coventry',
     image: '/images/areas/area-coventry.jpg',
-    fares: ['from £40', 'from £150', 'from £180', 'from £100'],
+    fares: ['£40', '£150', '£180', '£100'],
   },
   {
     name: 'Solihull',
     image: '/images/areas/area-solihull.jpg',
-    fares: ['from £30', 'from £150', 'from £190', 'from £120'],
+    fares: ['£30', '£150', '£190', '£120'],
   },
   {
     name: 'Rugby',
     image: '/images/areas/area-rugby.jpg',
-    fares: ['from £65', 'from £150', 'from £190', 'from £100'],
+    fares: ['£65', '£150', '£190', '£100'],
   },
   {
     name: 'Nuneaton',
     image: '/images/areas/area-nuneaton.jpg',
-    fares: ['from £45', 'from £190', 'from £240', 'from £120'],
+    fares: ['£45', '£190', '£240', '£120'],
   },
   {
     name: 'Birmingham',
     image: '/images/areas/area-birmingham.jpg',
-    fares: ['from £30', 'from £175', 'from £220', 'from £120'],
+    fares: ['£30', '£175', '£220', '£120'],
   },
 ]
 

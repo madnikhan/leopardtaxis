@@ -130,12 +130,80 @@ export function MetaTick({ className, size = 18 }: { className?: string; size?: 
   )
 }
 
+/** Google-style verified tick (blue badge) */
+export function GoogleVerifiedTick({ className, size = 18 }: { className?: string; size?: number }) {
+  return (
+    <svg
+      className={className}
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <circle cx="12" cy="12" r="11" fill="#4285F4" />
+      <path
+        fill="#fff"
+        d="M10.2 15.8 6.7 12.3l1.4-1.4 2.1 2.1 5.1-5.1 1.4 1.4-6.5 6.5z"
+      />
+    </svg>
+  )
+}
+
+/** X (Twitter) mark in a round badge */
+export function XVerifiedMark({ className, size = 18 }: { className?: string; size?: number }) {
+  return (
+    <svg
+      className={className}
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <circle cx="12" cy="12" r="11" fill="#0F1419" />
+      <path
+        fill="#fff"
+        d="M13.7 11.4 17.6 7h-1l-3.3 3.7L10.6 7H7.2l4.1 5.7L7.2 17h1l3.5-4 3.1 4h3.4l-4.5-5.6zm-1.2 1.4-.4-.6-3.2-4.3h1.4l2.6 3.5.4.6 3.3 4.4h-1.4l-2.7-3.6z"
+      />
+    </svg>
+  )
+}
+
+export function VerifiedMarks({
+  className,
+  size = 18,
+  showLabels = false,
+}: {
+  className?: string
+  size?: number
+  showLabels?: boolean
+}) {
+  return (
+    <span
+      className={`verified-row ${className ?? ''}`.trim()}
+      aria-label="Meta Verified, Google Verified, and X Verified"
+    >
+      <span className="verified-row__item" title="Meta Verified">
+        <MetaTick size={size} />
+        {showLabels ? <span>Meta Verified</span> : null}
+      </span>
+      <span className="verified-row__item" title="Google Verified">
+        <GoogleVerifiedTick size={size} />
+        {showLabels ? <span>Google Verified</span> : null}
+      </span>
+      <span className="verified-row__item" title="X Verified">
+        <XVerifiedMark size={size} />
+        {showLabels ? <span>X Verified</span> : null}
+      </span>
+    </span>
+  )
+}
+
 export function VerifiedBadge({ className }: { className?: string }) {
   return (
     <div className={`verified-badge ${className ?? ''}`}>
-      <MetaTick className="verified-badge__check" size={28} />
+      <VerifiedMarks size={22} />
       <div className="verified-badge__copy">
-        <strong>Meta Verified Business</strong>
+        <strong>Meta · Google · X Verified</strong>
         <span>Authentic business · Trusted by customers</span>
       </div>
     </div>

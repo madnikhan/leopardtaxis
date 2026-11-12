@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { MetaTick } from './Icons'
+import { VerifiedMarks } from './Icons'
 
 type LogoProps = {
   className?: string
@@ -52,9 +52,8 @@ export function Logo({
         </span>
       )}
       {showVerified && (
-        <span className="logo__verified logo__verified--compact" title="Meta Verified Business">
-          <MetaTick size={18} />
-          <span className="logo__verified-label">Meta Verified</span>
+        <span className="logo__verified logo__verified--compact" title="Meta, Google and X Verified">
+          <VerifiedMarks size={16} />
         </span>
       )}
     </Link>

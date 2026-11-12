@@ -4,7 +4,7 @@ import {
   GoogleMark,
   IconMail,
   IconPhone,
-  MetaTick,
+  VerifiedMarks,
   WhatsAppBadge,
 } from '../assets/Icons'
 import {
@@ -36,10 +36,7 @@ export function Footer() {
               >
                 <WhatsAppBadge size={28} />
               </a>
-              <span className="meta-inline" title="Meta Verified Business">
-                <MetaTick size={28} />
-                <span>Meta Verified Business</span>
-              </span>
+              <VerifiedMarks className="footer__verified" size={22} showLabels />
             </div>
           </div>
         </div>

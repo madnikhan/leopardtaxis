@@ -1,5 +1,5 @@
 import { LeopardMark, Logo } from '../assets/Logo'
-import { IconFacebook, IconMail, IconPhone, VerifiedLabelRow, WhatsAppBadge, XVerifiedMark } from '../assets/Icons'
+import { IconFacebook, VerifiedLabelRow, WhatsAppBadge, XVerifiedMark } from '../assets/Icons'
 import { GoogleReviewsFooter } from './GoogleReviews'
 import {
   EMAIL,
@@ -16,7 +16,6 @@ export function Footer() {
     <footer className="footer">
       <div className="container footer__contact">
         <div className="footer__item">
-          <IconPhone size={24} />
           <div className="footer__item-copy">
             <small>Call or WhatsApp</small>
             <div className="footer__phone-line">
@@ -39,18 +38,19 @@ export function Footer() {
           <div className="footer__item-copy">
             <small>Social</small>
             <div className="footer__social">
-              <a href={FACEBOOK_URL} target="_blank" rel="noreferrer" aria-label="Facebook">
+              <a href={FACEBOOK_URL} target="_blank" rel="noreferrer">
                 <IconFacebook size={28} />
+                Find us on Facebook
               </a>
-              <a href={X_URL} target="_blank" rel="noreferrer" aria-label="X">
+              <a href={X_URL} target="_blank" rel="noreferrer">
                 <XVerifiedMark size={28} />
+                Find us on X
               </a>
             </div>
           </div>
         </div>
 
         <div className="footer__item">
-          <IconMail size={24} />
           <div className="footer__item-copy">
             <small>Email</small>
             <a href={EMAIL_HREF}>{EMAIL}</a>

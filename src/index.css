@@ -354,7 +354,7 @@ a.trust-bar:hover {
 
 .verified-stack li {
   display: grid;
-  grid-template-columns: 22px 16px auto;
+  grid-template-columns: 28px 16px auto;
   align-items: center;
   gap: 0.32rem;
   color: var(--cream);
@@ -364,11 +364,20 @@ a.trust-bar:hover {
   white-space: nowrap;
 }
 
+.verified-stack li > :first-child {
+  justify-self: center;
+}
+
 .verified-labels {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 0.35rem 0.85rem;
+}
+
+.meta-logo {
+  display: block;
+  flex-shrink: 0;
 }
 
 .verified-labels > span {
@@ -822,14 +831,17 @@ a.trust-bar:hover {
 
 .footer__social {
   display: flex;
-  align-items: center;
-  gap: 0.55rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
   margin-top: 0.15rem;
 }
 
 .footer__social a {
   display: inline-flex;
-  line-height: 0;
+  align-items: center;
+  gap: 0.45rem;
+  line-height: 1.2;
 }
 
 .footer__verified-labels {
@@ -1896,7 +1908,7 @@ a.trust-bar:hover {
     flex: 1;
     min-width: 0;
     justify-items: start;
-    margin-left: 0.35rem;
+    justify-content: center;
   }
 
   .verified-stack--inline li {
@@ -2230,6 +2242,10 @@ a.trust-bar:hover {
   max-width: 36rem;
   color: var(--text-muted);
   font-size: 1.05rem;
+}
+
+.page-banner.page-banner--areas {
+  padding: 0.2rem 0;
 }
 
 .page-section {

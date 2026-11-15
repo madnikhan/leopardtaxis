@@ -1,10 +1,9 @@
-import { FiveStarRow, GoogleMark } from '../assets/Icons'
+import { FiveStarRow } from '../assets/Icons'
 import { GOOGLE_BUSINESS_URL, GOOGLE_REVIEW_URL } from '../constants'
 
 export function GoogleReviewsFooter() {
   return (
     <div className="footer__item footer__item--reviews">
-      <GoogleMark size={28} />
       <div className="footer__item-copy footer__reviews">
         <small>Google Reviews</small>
         <a href={GOOGLE_REVIEW_URL} target="_blank" rel="noreferrer">

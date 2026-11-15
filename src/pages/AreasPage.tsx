@@ -64,6 +64,7 @@ export function AreasPage() {
   return (
     <>
       <PageBanner
+        compact
         title="Areas Covered"
         subtitle="Airport transfer fare guidelines from towns we cover across Warwickshire and the West Midlands."
       />

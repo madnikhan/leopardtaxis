@@ -295,7 +295,6 @@ button {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
-.header--scrolled .header__verified-mobile,
 .header--scrolled .header__trust {
   display: none;
 }
@@ -398,7 +397,7 @@ a.trust-bar:hover {
   margin-left: 0.25rem;
 }
 
-.header__verified-mobile {
+.verified-stack--inline {
   display: none;
 }
 
@@ -1836,20 +1835,24 @@ a.trust-bar:hover {
   }
 
   :root {
-    --header-h: 268px;
+    --header-h: 200px;
   }
 
   .header__contact--bar {
     display: none;
   }
 
-  .header__verified-mobile {
-    display: block;
-    padding: 0.15rem 0 0.35rem;
+  .verified-stack--inline {
+    display: grid;
+    flex: 1;
+    min-width: 0;
+    justify-items: start;
+    margin-left: 0.35rem;
   }
 
-  .header__verified-mobile .verified-stack {
-    justify-items: start;
+  .verified-stack--inline li {
+    font-size: 0.68rem;
+    gap: 0.22rem;
   }
 
   .logo__name {

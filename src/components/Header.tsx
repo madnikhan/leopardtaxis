@@ -68,6 +68,7 @@ export function Header() {
         <div className="header__contact header__contact--bar">
           <VerifiedStack />
         </div>
+        <VerifiedStack className="verified-stack--inline" />
         <button
           type="button"
           className={`header__toggle ${open ? 'is-open' : ''}`}
@@ -78,15 +79,12 @@ export function Header() {
           <span />
         </button>
       </div>
-      <div className="container header__verified-mobile">
-        <VerifiedStack />
-      </div>
       <div className="container header__trust">
         <a className="trust-bar" href={GOOGLE_REVIEW_URL} target="_blank" rel="noreferrer">
           <strong>(30+)</strong> 5 <IconStarFilled className="trust-bar__star" size={14} /> reviews on
           Google last month
         </a>
-        <p className="trust-bar">Trusted, reliable and most competitive pricing in the area</p>
+        <p className="trust-bar">Trusted, reliable and most compatible pricing</p>
       </div>
     </header>
   )

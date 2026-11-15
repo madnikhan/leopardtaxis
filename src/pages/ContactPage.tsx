@@ -17,6 +17,7 @@ import {
   WHATSAPP_DISPLAY,
   WHATSAPP_URL,
 } from '../constants'
+import { usePageMeta } from '../usePageMeta'
 
 type Status = 'idle' | 'sending' | 'error'
 
@@ -27,6 +28,12 @@ function isContactSuccess(payload: unknown): boolean {
 }
 
 export function ContactPage() {
+  usePageMeta(
+    'Book a Taxi or Get an Airport Quote | Leopard Taxis',
+    'Book your Warwickshire airport transfer by phone, WhatsApp or email. Fixed-rate quotes for Heathrow, Birmingham and local journeys.',
+    '/contact',
+  )
+
   const [status, setStatus] = useState<Status>('idle')
   const [errorMessage, setErrorMessage] = useState('')
   const [showSuccess, setShowSuccess] = useState(false)

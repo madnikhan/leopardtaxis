@@ -1,5 +1,6 @@
 import { PageBanner } from '../components/PageBanner'
 import { WHATSAPP_URL } from '../constants'
+import { usePageMeta } from '../usePageMeta'
 
 const SERVICES = [
   {
@@ -37,6 +38,12 @@ const SERVICES = [
 ]
 
 export function ServicesPage() {
+  usePageMeta(
+    'Airport Transfers & Executive Travel | Leopard Taxis',
+    'Fixed-price UK airport transfers, long-distance travel and day tours from Warwickshire. Flight tracking, luggage help, and comfortable vehicles.',
+    '/services',
+  )
+
   return (
     <>
       <PageBanner

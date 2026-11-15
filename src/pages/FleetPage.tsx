@@ -1,8 +1,15 @@
 import { Fleet } from '../components/Fleet'
 import { PageBanner } from '../components/PageBanner'
 import { WHATSAPP_URL } from '../constants'
+import { usePageMeta } from '../usePageMeta'
 
 export function FleetPage() {
+  usePageMeta(
+    'Our Fleet | Saloon, Estate & MPV Airport Taxis Warwickshire',
+    'Explore our clean, modern fleet of saloon cars, estates and 6-8 seater MPVs for airport runs and group travel across Warwickshire.',
+    '/fleet',
+  )
+
   return (
     <>
       <PageBanner

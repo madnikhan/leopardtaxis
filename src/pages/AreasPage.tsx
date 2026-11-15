@@ -1,6 +1,7 @@
 import { PageBanner } from '../components/PageBanner'
 import { ServiceOffers } from '../components/ServiceOffers'
 import { WHATSAPP_URL } from '../constants'
+import { usePageMeta } from '../usePageMeta'
 
 const AIRPORT_LABELS = [
   'Birmingham Airport',
@@ -61,6 +62,12 @@ const AREAS: AreaFares[] = [
 ]
 
 export function AreasPage() {
+  usePageMeta(
+    'Areas Covered | Taxis in Leamington, Warwick & Stratford',
+    'Taxis and airport transfers from Leamington Spa, Warwick, Kenilworth, Stratford-upon-Avon, Coventry and Solihull to major UK airports.',
+    '/areas',
+  )
+
   return (
     <>
       <PageBanner

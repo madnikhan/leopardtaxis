@@ -1391,6 +1391,19 @@ a.trust-bar:hover {
   font-size: 0.92rem;
 }
 
+.page-banner--areas {
+  padding: 0.35rem 0 0.4rem;
+}
+
+.page-banner--areas .page-banner__title {
+  font-size: 1.45rem;
+}
+
+.page-banner--areas .page-banner__subtitle {
+  margin-top: 0.2rem;
+  font-size: 0.82rem;
+}
+
 .page-section--contact {
   padding: 1.25rem 0 2.5rem;
 }

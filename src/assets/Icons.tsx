@@ -112,6 +112,27 @@ export function WhatsAppBadge({ className, size = 28 }: IconProps) {
   )
 }
 
+/** Blue Meta infinity mark */
+export function MetaLogo({ className, size = 18 }: { className?: string; size?: number }) {
+  return (
+    <svg
+      className={className}
+      width={size}
+      height={size}
+      viewBox="0 0 48 24"
+      fill="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M24 12c0-4.2-3-7.6-7.4-7.6S9.2 7.8 9.2 12 12.2 19.6 16.6 19.6 24 16.2 24 12Zm0 0c0-4.2 3-7.6 7.4-7.6S38.8 7.8 38.8 12 35.8 19.6 31.4 19.6 24 16.2 24 12Z"
+        stroke="#0081FB"
+        strokeWidth="3.4"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
 export function MetaTick({ className, size = 18 }: { className?: string; size?: number }) {
   return (
     <svg
@@ -187,7 +208,7 @@ export function VerifiedStack({ className }: { className?: string }) {
   return (
     <ul className={`verified-stack ${className ?? ''}`.trim()} aria-label="Verified profiles">
       <li>
-        <WhatsAppBadge size={18} />
+        <MetaLogo size={20} />
         <MetaTick size={16} />
         <span>Meta Verified</span>
       </li>
@@ -210,7 +231,7 @@ export function VerifiedLabelRow({ className }: { className?: string }) {
   return (
     <span className={`verified-labels ${className ?? ''}`.trim()} aria-label="Verified profiles">
       <span>
-        <WhatsAppBadge size={18} />
+        <MetaLogo size={20} />
         Meta Verified
         <MetaTick size={16} />
       </span>

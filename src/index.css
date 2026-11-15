@@ -350,7 +350,7 @@ a.trust-bar:hover {
 
 .verified-stack li {
   display: grid;
-  grid-template-columns: 18px 16px auto;
+  grid-template-columns: 22px 16px auto;
   align-items: center;
   gap: 0.32rem;
   color: var(--cream);

@@ -84,7 +84,7 @@ export function Header() {
           <strong>(30+)</strong> 5 <IconStarFilled className="trust-bar__star" size={14} /> reviews on
           Google last month
         </a>
-        <p className="trust-bar">Trusted, reliable and most compatible pricing</p>
+        <p className="trust-bar">Trusted, reliable and most competitive pricing</p>
       </div>
     </header>
   )

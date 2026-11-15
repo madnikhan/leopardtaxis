@@ -40,11 +40,11 @@ export function Footer() {
             <div className="footer__social">
               <a href={FACEBOOK_URL} target="_blank" rel="noreferrer">
                 <IconFacebook size={28} />
-                Find us on Facebook
+                Follow Us on Facebook
               </a>
               <a href={X_URL} target="_blank" rel="noreferrer">
                 <XVerifiedMark size={28} />
-                Find us on X
+                Follow Us on X
               </a>
             </div>
           </div>

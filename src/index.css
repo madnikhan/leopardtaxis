@@ -295,6 +295,11 @@ button {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
+.header--scrolled .header__verified-mobile,
+.header--scrolled .header__trust {
+  display: none;
+}
+
 .header__top {
   min-height: 76px;
   display: flex;
@@ -1881,7 +1886,7 @@ a.trust-bar:hover {
 
   .nav {
     position: absolute;
-    top: calc(var(--header-h) + 0.15rem);
+    top: calc(100% + 0.15rem);
     right: 0.75rem;
     left: 0.75rem;
     z-index: 50;

@@ -1,4 +1,5 @@
 import { PageBanner } from '../components/PageBanner'
+import { ServiceOffers } from '../components/ServiceOffers'
 import { WHATSAPP_URL } from '../constants'
 
 const AIRPORT_LABELS = [
@@ -12,6 +13,7 @@ type AreaFares = {
   name: string
   image: string
   fares: [string, string, string, string]
+  note?: string
 }
 
 const AREAS: AreaFares[] = [
@@ -21,9 +23,9 @@ const AREAS: AreaFares[] = [
     fares: ['£40', '£130', '£170', '£100'],
   },
   {
-    name: 'Stratford upon Avon',
+    name: 'Wellesbourne / Stratford upon Avon',
     image: '/images/areas/area-stratford.jpg',
-    fares: ['£50', '£145', '£185', '£115'],
+    fares: ['£50 / £55', '£145', '£185', '£115'],
   },
   {
     name: 'Kenilworth',
@@ -51,9 +53,10 @@ const AREAS: AreaFares[] = [
     fares: ['£45', '£190', '£240', '£120'],
   },
   {
-    name: 'Birmingham',
+    name: 'Birmingham Central',
     image: '/images/areas/area-birmingham.jpg',
-    fares: ['£30', '£175', '£220', '£120'],
+    fares: ['£35', '£175', '£220', '£120'],
+    note: 'Please ask for fares to Airports from other areas of Birmingham',
   },
 ]
 
@@ -64,6 +67,7 @@ export function AreasPage() {
         title="Areas Covered"
         subtitle="Airport transfer fare guidelines from towns we cover across Warwickshire and the West Midlands."
       />
+      <ServiceOffers variant="light" icon="van" birminghamNote />
       <section className="page-section">
         <div className="container areas-cards">
           {AREAS.map((area) => (
@@ -79,6 +83,7 @@ export function AreasPage() {
               </div>
               <div className="area-card__body">
                 <h2>{area.name}</h2>
+                {area.note ? <p className="area-card__note">* {area.note}</p> : null}
                 <ul className="area-fares">
                   {AIRPORT_LABELS.map((label, i) => (
                     <li key={label}>

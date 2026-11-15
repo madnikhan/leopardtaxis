@@ -1,13 +1,7 @@
 import { LeopardMark, Logo } from '../assets/Logo'
-import { IconMail, IconPhone, VerifiedMarks, WhatsAppBadge } from '../assets/Icons'
+import { IconMail, IconPhone, VerifiedLabelRow, WhatsAppBadge } from '../assets/Icons'
 import { GoogleReviewsFooter } from './GoogleReviews'
-import {
-  EMAIL,
-  EMAIL_HREF,
-  PHONE_TEL,
-  WHATSAPP_DISPLAY,
-  WHATSAPP_URL,
-} from '../constants'
+import { EMAIL, EMAIL_HREF, PHONE_TEL, WHATSAPP_DISPLAY, WHATSAPP_URL } from '../constants'
 
 export function Footer() {
   return (
@@ -17,8 +11,7 @@ export function Footer() {
           <IconPhone size={24} />
           <div className="footer__item-copy">
             <small>Call or WhatsApp</small>
-            <a href={PHONE_TEL}>{WHATSAPP_DISPLAY}</a>
-            <div className="footer__badges">
+            <div className="footer__phone-line">
               <a
                 className="footer__badge-link"
                 href={WHATSAPP_URL}
@@ -28,8 +21,9 @@ export function Footer() {
               >
                 <WhatsAppBadge size={28} />
               </a>
-              <VerifiedMarks className="footer__verified" size={22} showLabels />
+              <a href={PHONE_TEL}>{WHATSAPP_DISPLAY}</a>
             </div>
+            <VerifiedLabelRow className="footer__verified-labels" />
           </div>
         </div>
 

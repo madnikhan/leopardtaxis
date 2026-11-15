@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
-import { VerifiedMarks, WhatsAppBadge } from '../assets/Icons'
+import { IconStarFilled, VerifiedStack } from '../assets/Icons'
 import { Logo } from '../assets/Logo'
-import { PHONE_TEL, WHATSAPP_DISPLAY, WHATSAPP_URL } from '../constants'
+import { GOOGLE_REVIEW_URL, PHONE_TEL, WHATSAPP_DISPLAY } from '../constants'
 
 const LINKS = [
   { to: '/', label: 'Home', end: true },
@@ -11,41 +11,6 @@ const LINKS = [
   { to: '/fleet', label: 'Fleet' },
   { to: '/contact', label: 'Contact' },
 ]
-
-function HeaderContact({
-  className = '',
-  showMetaLabel = false,
-  showPhone = true,
-}: {
-  className?: string
-  showMetaLabel?: boolean
-  showPhone?: boolean
-}) {
-  return (
-    <div className={`header__contact ${className}`.trim()}>
-      {showPhone ? (
-        <a className="header__phone" href={PHONE_TEL}>
-          {WHATSAPP_DISPLAY}
-        </a>
-      ) : null}
-      <a
-        className="header__wa"
-        href={WHATSAPP_URL}
-        target="_blank"
-        rel="noreferrer"
-        aria-label="WhatsApp"
-      >
-        <WhatsAppBadge size={20} />
-        <span className="header__wa-text">WhatsApp</span>
-      </a>
-      <VerifiedMarks
-        className={`header__verified${showMetaLabel ? ' header__verified--labels' : ''}`}
-        size={18}
-        showLabels={showMetaLabel}
-      />
-    </div>
-  )
-}
 
 export function Header() {
   const [open, setOpen] = useState(false)
@@ -80,8 +45,8 @@ export function Header() {
 
   return (
     <header className={classes}>
-      <div className="container header__inner">
-        <Logo showVerified onNavigate={() => setOpen(false)} />
+      <div className="container header__top">
+        <Logo onNavigate={() => setOpen(false)} />
         <nav className={`nav ${open ? 'is-open' : ''}`} aria-label="Primary">
           {LINKS.map((link) => (
             <NavLink
@@ -94,9 +59,16 @@ export function Header() {
               {link.label}
             </NavLink>
           ))}
-          <HeaderContact className="header__contact--mobile" showMetaLabel />
+          <div className="header__contact header__contact--mobile">
+            <a className="header__phone" href={PHONE_TEL}>
+              {WHATSAPP_DISPLAY}
+            </a>
+            <VerifiedStack />
+          </div>
         </nav>
-        <HeaderContact className="header__contact--bar" showPhone={false} />
+        <div className="header__contact header__contact--bar">
+          <VerifiedStack />
+        </div>
         <button
           type="button"
           className={`header__toggle ${open ? 'is-open' : ''}`}
@@ -106,6 +78,13 @@ export function Header() {
         >
           <span />
         </button>
+      </div>
+      <div className="container header__trust">
+        <a className="trust-bar" href={GOOGLE_REVIEW_URL} target="_blank" rel="noreferrer">
+          <strong>(30+)</strong> 5 <IconStarFilled className="trust-bar__star" size={14} /> reviews on
+          Google last month
+        </a>
+        <p className="trust-bar">Trusted, reliable and most competitive pricing in the area</p>
       </div>
     </header>
   )

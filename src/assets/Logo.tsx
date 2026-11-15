@@ -1,10 +1,8 @@
 import { Link } from 'react-router-dom'
-import { VerifiedMarks } from './Icons'
 
 type LogoProps = {
   className?: string
   showText?: boolean
-  showVerified?: boolean
   onNavigate?: () => void
 }
 
@@ -30,7 +28,6 @@ export function LeopardMark({
 export function Logo({
   className = '',
   showText = true,
-  showVerified = false,
   onNavigate,
 }: LogoProps) {
   return (
@@ -49,11 +46,6 @@ export function Logo({
             <span className="logo__name logo__name--sub">TAXIS</span>
             <span className="logo__rule" aria-hidden="true" />
           </span>
-        </span>
-      )}
-      {showVerified && (
-        <span className="logo__verified logo__verified--compact" title="Meta, Google and X Verified">
-          <VerifiedMarks size={16} />
         </span>
       )}
     </Link>

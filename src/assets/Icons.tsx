@@ -182,42 +182,74 @@ export function XVerifiedMark({ className, size = 18 }: { className?: string; si
   )
 }
 
-export function VerifiedMarks({
-  className,
-  size = 18,
-  showLabels = false,
-}: {
-  className?: string
-  size?: number
-  showLabels?: boolean
-}) {
+/** Platform icon, blue tick, then label — stacked like the client header mock. */
+export function VerifiedStack({ className }: { className?: string }) {
   return (
-    <span
-      className={`verified-row ${className ?? ''}`.trim()}
-      aria-label="Meta Verified, Google Verified, and X Verified"
-    >
-      <span className="verified-row__item" title="Meta Verified">
-        <MetaTick size={size} />
-        {showLabels ? <span>Meta Verified</span> : null}
+    <ul className={`verified-stack ${className ?? ''}`.trim()} aria-label="Verified profiles">
+      <li>
+        <WhatsAppBadge size={18} />
+        <MetaTick size={16} />
+        <span>Meta Verified</span>
+      </li>
+      <li>
+        <XVerifiedMark size={18} />
+        <MetaTick size={16} />
+        <span>X Verified</span>
+      </li>
+      <li>
+        <GoogleMark size={18} />
+        <MetaTick size={16} />
+        <span>Google Verified</span>
+      </li>
+    </ul>
+  )
+}
+
+/** Label then blue tick, in a single wrapping row. */
+export function VerifiedLabelRow({ className }: { className?: string }) {
+  return (
+    <span className={`verified-labels ${className ?? ''}`.trim()} aria-label="Verified profiles">
+      <span>
+        Meta Verified <MetaTick size={16} />
       </span>
-      <span className="verified-row__item" title="Google Verified">
-        <GoogleVerifiedBadge size={size} />
-        {showLabels ? <span>Google Verified</span> : null}
+      <span>
+        X Verified <MetaTick size={16} />
       </span>
-      <span className="verified-row__item" title="X Verified">
-        <XVerifiedMark size={size} />
-        {showLabels ? <span>X Verified</span> : null}
+      <span>
+        Google Verified <MetaTick size={16} />
       </span>
     </span>
+  )
+}
+
+export function IconVan({ className, size = 28 }: IconProps) {
+  return (
+    <svg className={className} width={size} height={size} viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        fill="currentColor"
+        d="M3 7h11v8H3V7zm12 2h3.2L21 12.2V15h-6V9zM6.5 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm11 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"
+      />
+    </svg>
+  )
+}
+
+export function IconReturn({ className, size = 28 }: IconProps) {
+  return (
+    <svg className={className} width={size} height={size} viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        fill="currentColor"
+        d="M12 6V3L7 8l5 5V10c3.3 0 6 2.7 6 6 0 .7-.1 1.4-.3 2 1.4-1.3 2.3-3.2 2.3-5.3C20 8.5 16.4 6 12 6zm-6.7 2C3.9 9.3 3 11.2 3 13.3 3 17.5 6.6 20 11 20v3l5-5-5-5v3c-3.3 0-6-2.7-6-6 0-.7.1-1.4.3-2z"
+      />
+    </svg>
   )
 }
 
 export function VerifiedBadge({ className }: { className?: string }) {
   return (
     <div className={`verified-badge ${className ?? ''}`}>
-      <VerifiedMarks size={22} />
+      <VerifiedLabelRow />
       <div className="verified-badge__copy">
-        <strong>Meta · Google · X Verified</strong>
+        <strong>Meta · X · Google Verified</strong>
         <span>Authentic business · Trusted by customers</span>
       </div>
     </div>

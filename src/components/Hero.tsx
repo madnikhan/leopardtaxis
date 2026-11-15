@@ -1,5 +1,6 @@
 import { IconPhone } from '../assets/Icons'
 import { HEATHROW_FARES, PHONE_TEL, WHATSAPP_DISPLAY, WHATSAPP_URL } from '../constants'
+import { ServiceOffers } from './ServiceOffers'
 
 export function Hero() {
   return (
@@ -54,6 +55,7 @@ export function Hero() {
               </li>
             ))}
           </ul>
+          <ServiceOffers variant="dark" />
         </aside>
 
         <div className="hero__actions">

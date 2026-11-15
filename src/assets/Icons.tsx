@@ -183,6 +183,18 @@ export function GoogleVerifiedBadge({ className, size = 18 }: { className?: stri
   )
 }
 
+export function IconFacebook({ className, size = 28 }: IconProps) {
+  return (
+    <svg className={className} width={size} height={size} viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="12" fill="#1877F2" />
+      <path
+        fill="#fff"
+        d="M13.4 19.5v-6.1h2.1l.3-2.4h-2.4V9.5c0-.7.2-1.2 1.2-1.2h1.3V6.1c-.2 0-1-.1-1.9-.1-1.9 0-3.2 1.1-3.2 3.3v1.7H8.6v2.4h2.2v6.1h2.6z"
+      />
+    </svg>
+  )
+}
+
 /** X (Twitter) mark in a round badge */
 export function XVerifiedMark({ className, size = 18 }: { className?: string; size?: number }) {
   return (

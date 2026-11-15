@@ -820,6 +820,18 @@ a.trust-bar:hover {
   flex-wrap: wrap;
 }
 
+.footer__social {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 0.15rem;
+}
+
+.footer__social a {
+  display: inline-flex;
+  line-height: 0;
+}
+
 .footer__verified-labels {
   margin-top: 0.45rem;
   flex-wrap: nowrap;
@@ -1557,7 +1569,7 @@ a.trust-bar:hover {
 
 .footer__contact {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   padding: 1.6rem 0;
   border-bottom: 1px solid rgba(212, 175, 55, 0.25);

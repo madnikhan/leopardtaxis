@@ -4,6 +4,8 @@ export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`
 export const PHONE_TEL = 'tel:+447947745958'
 export const EMAIL = 'info@leopardtaxis.co.uk'
 export const EMAIL_HREF = `mailto:${EMAIL}`
+export const FACEBOOK_URL = 'https://www.facebook.com/share/19mSJUW8D3/?mibextid=wwXIfr'
+export const X_URL = 'https://x.com/husnainbajwa?s=11'
 export const GOOGLE_REVIEW_URL = 'https://g.page/r/CX_xvXJIL8xxEBM/review'
 export const GOOGLE_BUSINESS_URL = 'https://share.google/11keWnUie9bfzBBoe'
 /** IONOS PHP mail endpoint (copied from public/ into dist/) */

@@ -210,13 +210,19 @@ export function VerifiedLabelRow({ className }: { className?: string }) {
   return (
     <span className={`verified-labels ${className ?? ''}`.trim()} aria-label="Verified profiles">
       <span>
-        Meta Verified <MetaTick size={16} />
+        <WhatsAppBadge size={18} />
+        Meta Verified
+        <MetaTick size={16} />
       </span>
       <span>
-        X Verified <MetaTick size={16} />
+        <XVerifiedMark size={18} />
+        X Verified
+        <MetaTick size={16} />
       </span>
       <span>
-        Google Verified <MetaTick size={16} />
+        <GoogleMark size={18} />
+        Google Verified
+        <MetaTick size={16} />
       </span>
     </span>
   )

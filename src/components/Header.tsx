@@ -63,7 +63,6 @@ export function Header() {
             <a className="header__phone" href={PHONE_TEL}>
               {WHATSAPP_DISPLAY}
             </a>
-            <VerifiedStack />
           </div>
         </nav>
         <div className="header__contact header__contact--bar">
@@ -78,6 +77,9 @@ export function Header() {
         >
           <span />
         </button>
+      </div>
+      <div className="container header__verified-mobile">
+        <VerifiedStack />
       </div>
       <div className="container header__trust">
         <a className="trust-bar" href={GOOGLE_REVIEW_URL} target="_blank" rel="noreferrer">

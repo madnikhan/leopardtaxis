@@ -811,6 +811,12 @@ a.trust-bar:hover {
   flex-wrap: wrap;
 }
 
+.footer__verified-labels {
+  margin-top: 0.45rem;
+  flex-wrap: nowrap;
+  gap: 0.35rem 0.55rem;
+}
+
 .footer__reviews-month {
   margin: 0.15rem 0 0;
   font-size: 0.95rem;
@@ -1783,6 +1789,15 @@ a.trust-bar:hover {
   opacity: 0.55;
 }
 
+.footer__company {
+  margin: 0.55rem auto 0;
+  max-width: 36rem;
+  font-size: 0.72rem;
+  line-height: 1.45;
+  opacity: 0.7;
+  text-align: center;
+}
+
 /* —— Responsive —— */
 @media (max-width: 1200px) {
   .dest-grid,
@@ -2121,8 +2136,13 @@ a.trust-bar:hover {
     gap: 0.35rem;
   }
 
-  .verified-labels {
-    gap: 0.4rem 0.7rem;
+  .footer__verified-labels {
+    gap: 0.2rem 0.35rem;
+  }
+
+  .footer__verified-labels > span {
+    font-size: 0.62rem;
+    gap: 0.18rem;
   }
 
   .dest-card,

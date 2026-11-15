@@ -19,7 +19,7 @@ export function Footer() {
                 rel="noreferrer"
                 aria-label="WhatsApp"
               >
-                <WhatsAppBadge size={28} />
+                <WhatsAppBadge size={22} />
               </a>
               <a href={PHONE_TEL}>{WHATSAPP_DISPLAY}</a>
             </div>
@@ -44,6 +44,10 @@ export function Footer() {
         <p className="footer__scope">Local | Regional | Nationwide</p>
         <p className="footer__script">Ride with Confidence</p>
         <p className="footer__legal">© {new Date().getFullYear()} Leopard Taxis. All rights reserved.</p>
+        <p className="footer__company">
+          Leopard Taxis Limited is registered in the Companies house, registered number is 17026262.
+          Registered Address: 76 Lionheart Avenue, Leamington Spa, CV33 9SW.
+        </p>
       </div>
     </footer>
   )

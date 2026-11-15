@@ -15,7 +15,18 @@
       content="Professional taxi and transfer services across Warwickshire, West Midlands and beyond."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="/images/hero-airport.jpg" />
+    <meta property="og:image" content="https://leopardtaxis.co.uk/images/hero-airport.webp" />
+    <script>
+      if (location.pathname === '/' || location.pathname === '/index.html') {
+        var hero = document.createElement('link')
+        hero.rel = 'preload'
+        hero.as = 'image'
+        hero.href = '/images/hero-sky.webp'
+        hero.type = 'image/webp'
+        hero.fetchPriority = 'high'
+        document.head.appendChild(hero)
+      }
+    </script>
     <meta name="twitter:card" content="summary_large_image" />
     <title>Leopard Taxis | Safe · Reliable · Comfortable</title>
   </head>

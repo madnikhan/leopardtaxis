@@ -4,7 +4,7 @@ import { WHATSAPP_URL } from '../constants'
 const SERVICES = [
   {
     title: 'Airport Transfer',
-    image: '/images/services/service-airport.jpg',
+    image: '/images/services/service-airport.webp',
     body: [
       'Stress-free travel to and from all major UK airports including Heathrow, Birmingham, Gatwick, Stansted, Luton and Manchester.',
       'Flight tracking for delays, help with luggage, and clear fixed-price transfers so you know the fare before you travel — with professional, pleasant drivers and clean, comfortable cars.',
@@ -12,7 +12,7 @@ const SERVICES = [
   },
   {
     title: 'Day Outs',
-    image: '/images/services/service-dayout.jpg',
+    image: '/images/services/service-dayout.webp',
     body: [
       'Explore popular destinations with comfort and ease — from the Cotswolds and Bath to coastal escapes, theme parks and landmark days out.',
       'Your driver waits as needed so you can enjoy the day without parking or timetable stress. Ideal for couples, families and small groups.',
@@ -20,7 +20,7 @@ const SERVICES = [
   },
   {
     title: 'Intercity Travel',
-    image: '/images/services/service-intercity.jpg',
+    image: '/images/services/service-intercity.webp',
     body: [
       'Longer journeys with the same high standards — business trips, family visits, university runs and nationwide private hire.',
       'Door-to-door service in a clean, comfortable vehicle with professional drivers who know the UK road network.',
@@ -28,7 +28,7 @@ const SERVICES = [
   },
   {
     title: 'Everyday Taxi Needs',
-    image: '/images/services/service-everyday.jpg',
+    image: '/images/services/service-everyday.webp',
     body: [
       'Local runs across Warwickshire and the West Midlands for school runs, hospital appointments, nights out, shopping trips and corporate travel.',
       'Reliable pickups when you need them — early mornings, evenings and weekends — with clear communication and courteous drivers.',

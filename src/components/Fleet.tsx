@@ -1,31 +1,31 @@
 const VEHICLES = [
   {
     name: 'Saloon',
-    src: '/images/fleet-saloon.jpg',
+    src: '/images/fleet-saloon.webp',
     detail:
       'Comfortable 3–4 passenger saloon for airport runs, business travel and everyday hire. Ideal when you need a smart, efficient ride with standard luggage space.',
   },
   {
     name: 'Estate',
-    src: '/images/fleet-estate.jpg',
+    src: '/images/fleet-estate.webp',
     detail:
       'Extra boot space for suitcases or shopping. Perfect for families and travellers with more luggage without moving up to an MPV.',
   },
   {
     name: 'Executive',
-    src: '/images/fleet-executive.jpg',
+    src: '/images/fleet-executive.webp',
     detail:
       'Premium black executive car for VIP transfers, corporate travel and special occasions. Refined cabin comfort with professional, pleasant drivers.',
   },
   {
     name: '6 Seaters',
-    src: '/images/fleet-6seater.jpg',
+    src: '/images/fleet-6seater.webp',
     detail:
       'Spacious MPV-style people carrier for up to 6 passengers. Great for families, small groups and airport transfers with multiple bags.',
   },
   {
     name: '8 Seaters',
-    src: '/images/fleet-8seater.jpg',
+    src: '/images/fleet-8seater.webp',
     detail:
       'Mercedes Vito or similar style minibus for up to 8 passengers. Ideal for group days out, sports teams, weddings and multi-family airport trips.',
   },

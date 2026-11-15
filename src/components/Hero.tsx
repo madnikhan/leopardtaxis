@@ -8,25 +8,30 @@ export function Hero() {
       <div className="hero__media" aria-hidden="true">
         <img
           className="hero__sky"
-          src="/images/hero-sky.jpg"
-          alt=""
-          width={1920}
-          height={1080}
-          fetchPriority="high"
-        />
-        <img
-          className="hero__plane"
-          src="/images/hero-plane.png"
-          alt=""
-          width={960}
-          height={540}
-        />
-        <img
-          className="hero__car"
-          src="/images/hero-car.png"
+          src="/images/hero-sky.webp"
           alt=""
           width={1280}
           height={720}
+          fetchPriority="high"
+          decoding="async"
+        />
+        <img
+          className="hero__plane"
+          src="/images/hero-plane.webp"
+          alt=""
+          width={640}
+          height={326}
+          fetchPriority="low"
+          decoding="async"
+        />
+        <img
+          className="hero__car"
+          src="/images/hero-car.webp"
+          alt=""
+          width={900}
+          height={300}
+          fetchPriority="low"
+          decoding="async"
         />
       </div>
       <div className="hero__shade" aria-hidden="true" />

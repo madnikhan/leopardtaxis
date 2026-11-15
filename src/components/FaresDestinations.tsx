@@ -1,27 +1,27 @@
 const DESTINATIONS = [
   {
     label: 'Bournemouth & Durdle Door',
-    src: '/images/dest-bournemouth.jpg',
+    src: '/images/dest-bournemouth.webp',
   },
   {
     label: 'Bath & Stonehenge',
-    src: '/images/dest-bath-stonehenge.jpg',
+    src: '/images/dest-bath-stonehenge.webp',
   },
   {
     label: 'Cotswolds',
-    src: '/images/dest-cotswolds.jpg',
+    src: '/images/dest-cotswolds.webp',
   },
   {
     label: 'Oxford & Windsor',
-    src: '/images/dest-oxford.jpg',
+    src: '/images/dest-oxford.webp',
   },
   {
     label: 'London',
-    src: '/images/dest-london.jpg',
+    src: '/images/dest-london.webp',
   },
   {
     label: 'Lake & Peak Districts',
-    src: '/images/dest-lakes.jpg',
+    src: '/images/dest-lakes.webp',
   },
 ]
 

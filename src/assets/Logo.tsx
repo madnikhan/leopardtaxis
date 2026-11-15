@@ -16,11 +16,12 @@ export function LeopardMark({
   return (
     <img
       className={className}
-      src="/images/logo-leopard-round.png"
+      src="/images/logo-leopard-round.webp"
       alt=""
       width={size}
       height={size}
       decoding="async"
+      fetchPriority="low"
     />
   )
 }

@@ -19,42 +19,42 @@ type AreaFares = {
 const AREAS: AreaFares[] = [
   {
     name: 'Warwick & Leamington Spa',
-    image: '/images/areas/area-warwick.jpg',
+    image: '/images/areas/area-warwick.webp',
     fares: ['£40', '£130', '£170', '£100'],
   },
   {
     name: 'Wellesbourne / Stratford upon Avon',
-    image: '/images/areas/area-stratford.jpg',
+    image: '/images/areas/area-stratford.webp',
     fares: ['£50 / £55', '£145', '£185', '£115'],
   },
   {
     name: 'Kenilworth',
-    image: '/images/areas/area-kenilworth.jpg',
+    image: '/images/areas/area-kenilworth.webp',
     fares: ['£35', '£145', '£185', '£115'],
   },
   {
     name: 'Coventry',
-    image: '/images/areas/area-coventry.jpg',
+    image: '/images/areas/area-coventry.webp',
     fares: ['£40', '£150', '£180', '£100'],
   },
   {
     name: 'Solihull',
-    image: '/images/areas/area-solihull.jpg',
+    image: '/images/areas/area-solihull.webp',
     fares: ['£30', '£150', '£190', '£120'],
   },
   {
     name: 'Rugby',
-    image: '/images/areas/area-rugby.jpg',
+    image: '/images/areas/area-rugby.webp',
     fares: ['£65', '£150', '£190', '£100'],
   },
   {
     name: 'Nuneaton',
-    image: '/images/areas/area-nuneaton.jpg',
+    image: '/images/areas/area-nuneaton.webp',
     fares: ['£45', '£190', '£240', '£120'],
   },
   {
     name: 'Birmingham Central',
-    image: '/images/areas/area-birmingham.jpg',
+    image: '/images/areas/area-birmingham.webp',
     fares: ['£35', '£175', '£220', '£120'],
     note: 'Please ask for fares to Airports from other areas of Birmingham',
   },
